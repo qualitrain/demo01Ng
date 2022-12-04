@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./lista-b4.component.css']
 })
 export class ListaB4Component {
+  opciones: string[];
+
+  constructor() {
+    this.opciones = ["Soccer", "Tenis", "Baloncesto", "Boxeo","Atletismo"];
+   }
 
 }
