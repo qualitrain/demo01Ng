@@ -2,10 +2,16 @@
   <h4 class="text-center my-4 text-primary">{{title}}</h4>
   <h5 class="text-primary mb-4">Componente <pre class="d-inline">lista-b4</pre> (3 instancias)</h5>
   <div class="row">
-      <div class="col-sm table-warning p-2 rounded">
+    <div class="col-sm table-warning p-2 rounded">
           <app-lista-b4></app-lista-b4>
-      </div>
-  </div>
+    </div>
+    <div class="col-sm  p-2 rounded">
+        <app-lista-b4></app-lista-b4>
+    </div>
+    <div class="col-sm table-primary p-2 rounded">
+        <app-lista-b4></app-lista-b4>
+    </div>
+</div>
   <div class="row my-3">
       <small class="text-muted">Ejemplo del uso del <span class="font-italic font-weight-bold text-danger">interpolation binding</span>. 
           Cada instancia del componente lee un arreglo declarado en su controlador y muestra sus valores 
