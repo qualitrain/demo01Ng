@@ -11,7 +11,7 @@
     <div class="col-sm table-primary p-2 rounded">
         <app-lista-b4></app-lista-b4>
     </div>
-</div>
+  </div>
   <div class="row my-3">
       <small class="text-muted">Ejemplo del uso del <span class="font-italic font-weight-bold text-danger">interpolation binding</span>. 
           Cada instancia del componente lee un arreglo declarado en su controlador y muestra sus valores 
@@ -22,5 +22,73 @@
       </small>
 
   </div>
-  <hr>
+  <hr class="my-4">
+  <h5 class="text-primary">Componente <pre class="d-inline">seleccionador</pre> configurable</h5>
+  <div class="row">
+    <div class="col-sm-4 p-2">
+            <app-seleccionador paramNombre="taller" 
+                               paramEtiquetas="Cocina,Electricidad,Pintura,Artes Plasticas" 
+                               paramValores="C,E,P,AP"
+                               paramConBorde="true"
+                               paramMostrarValores="true">                
+            </app-seleccionador>
+    </div>
+    <div class="col-sm-4 p-2">
+        <app-seleccionador></app-seleccionador>
+    </div>
+    <div class="col-sm-4 p-2">
+            <app-seleccionador paramNombre="servicio" 
+                               paramEtiquetas="Desayunos,Comidas,Uniformes,Biblioteca,Sala Computo" 
+                               paramValores="D,C,U,B,SC"
+                               paramConBorde="true"
+                               paramMostrarValores="false"
+                               paramTipo ="checkbox"
+            >                
+            </app-seleccionador>
+        </div>
+    </div>
+<div>
+    <small class="text-muted">Ejemplo de usos de <span class="font-italic font-weight-bold text-danger">directivas estructurales</span>. 
+        En este caso: <br>
+        <ul>
+            <li>
+                <code class="font-weight-bold">*ngFor</code> (with index), 
+            </li>
+            <li>
+                <code class="font-weight-bold">*ngIf</code>, 
+            </li>
+            <li>
+                <code class="font-weight-bold">[ngSwitch]</code> (no estructural),
+            </li>
+            <li>
+                <code class="font-weight-bold">*ngSwitchCase</code> y 
+            </li>
+            <li>
+                <code class="font-weight-bold">*ngSwitchDefault</code>. 
+            </li>
+       </ul>
+    Tambi&eacute;n se utiliza <span class="font-italic font-weight-bold">class binding</span> para el dibujo condicional del borde.<br>
+    El componente permite personalizar:
+    <ol>
+        <li>
+            Borde 
+        </li>
+        <li>
+            El despliegue de valores de cada opci&oacute;n
+        </li>
+        <li>
+            Si se desea usar radio botones o botones de tipo chekbox 
+        </li>
+        <li>
+            El nombre del campo
+        </li>
+        <li>
+            Los valores posibles a elegir
+        </li>
+    </ol> 
+    En general, el componente explota el <strong>renderizado condicional</strong> con base en datos residentes en su controlador.
+    </small>
+</div>
+<hr>
+
 </div>

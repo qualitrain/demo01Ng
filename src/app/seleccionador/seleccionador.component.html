@@ -1,0 +1,25 @@
+<div [class.border]="layout.conBorde" [class.border-primary]="layout.conBorde" class="bg-light rounded p-2 ">
+        <p class="text-primary mb-2">Seleccione 
+            <span [ngSwitch]="layout.tipo">
+                <span *ngSwitchCase="'checkbox'">uno o m&aacute;s</span>
+                <span *ngSwitchDefault>un</span>
+            </span>
+             {{campo.nombre}}<span [ngSwitch]="layout.tipo">
+                 <span *ngSwitchCase="'checkbox'">s:</span>
+                 <span *ngSwitchDefault>:</span>
+            </span>
+        </p>
+        <div *ngFor="let opcionI of campo.etiquetas; let i=index" class="form-check">
+            <span [ngSwitch]="layout.tipo">
+                <input *ngSwitchCase="'checkbox'" type="checkbox" class="form-check-input" name="{{campo.nombre}}" 
+                    id="id{{opcionI}}" value="{{campo.valores[i]}}">
+                <input *ngSwitchDefault type="radio" class="form-check-input" name="{{campo.nombre}}" 
+                    id="id{{opcionI}}" value="{{campo.valores[i]}}">
+            </span>
+            <label class="form-check-label" for="id{{opcionI}}">
+            {{opcionI | titlecase}} 
+            <span *ngIf="layout.mostrarValores">({{campo.valores[i]}})</span>
+        </label>
+        </div>
+    </div>
+    

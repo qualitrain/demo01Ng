@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ListaB4Component } from './lista-b4/lista-b4.component';
+import { SeleccionadorComponent } from './seleccionador/seleccionador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaB4Component
+    ListaB4Component,
+    SeleccionadorComponent
   ],
   imports: [
     BrowserModule
