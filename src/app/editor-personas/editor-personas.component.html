@@ -1,0 +1,30 @@
+<div class="bg-light p-3">
+    <h5 class="text-primary text-center mb-3">{{funcionActual}}</h5>
+    <div class="form-group">
+      <label for="idApPaterno" class="text-primary">Apellido Paterno:</label>
+      <input type="text" name="apPaterno" id="idApPaterno" 
+      [(ngModel)]="persona.apPaterno"
+       class="form-control" aria-describedby="helpApPaterno">
+      <small id="helpApPaterno" class="text-muted">Dato obligatorio</small>
+    </div>
+    <div class="form-group">
+      <label for="idApMaterno" class="text-primary">Apellido Materno:</label>
+      <input type="text" name="apMaterno" id="idApMaterno" 
+      [(ngModel)]="persona.apMaterno"
+       class="form-control" aria-describedby="helpApMaterno">
+      <small id="helpApMaterno" class="text-muted">Dato obligatorio</small>
+    </div>
+    <div class="form-group">
+      <label for="idNombres" class="text-primary">Nombre(s):</label>
+      <input type="text" name="nombres" id="idNombres" 
+      [(ngModel)]="persona.nombres"
+       class="form-control" aria-describedby="helpNombres">
+      <small id="helpNombres" class="text-muted">Dato obligatorio</small>
+    </div>
+    <p><strong class="text-success">Nombre completo: <br>
+        <span class="text-warning">   {{persona.nombres}}   </span>
+        <span class="text-secondary"> {{persona.apPaterno}} </span>
+        <span class="text-danger">    {{persona.apMaterno}} </span> 
+      </strong>
+    </p>
+  </div>
