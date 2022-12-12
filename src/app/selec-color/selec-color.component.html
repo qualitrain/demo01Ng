@@ -1,0 +1,26 @@
+<div id="idCajaColor" class="row my-2" [style.backgroundColor]="hsl()">
+</div>
+<div class="row justify-content-around">
+    <div class="d-inline-block campoColor">
+        <label for="idTono{{id}}" class="d-block mb-1">Tono:</label>
+        <input type="number" max="359" min="0" id="idTono{{id}}" 
+                class="form-control-sm text-center datoColor" [(ngModel)]="tono">
+    </div>
+    <div class="d-inline-block campoColor">
+        <label for="idSaturacion{{id}}" class="d-block mb-1">Saturaci&oacute;n:</label>
+        <input type="number" max="100" min="0" id="idSaturacion{{id}}" 
+                class="form-control-sm text-center datoColor" [(ngModel)]="saturacion">%
+    </div>
+    <div class="d-inline-block campoColor">
+        <label for="idLuz{{id}}" class="d-block mb-1">Iluminaci&oacute;n:</label>
+        <input type="number" max="100" min="0" id="idLuz{{id}}" 
+                class="form-control-sm text-center datoColor" [(ngModel)]="iluminacion">%
+    </div>
+</div>
+<div class="row mt-3" id="idCajaColores">
+    <div class="bot-color" *ngFor="let colorI of colores" 
+            [style.width]="getAnchoBtnColor()" 
+            [style.backgroundColor]="getColorHsl(colorI)" 
+            on-click="resetColor(colorI)">
+    </div>
+</div>

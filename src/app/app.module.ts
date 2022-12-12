@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ListaB4Component } from './lista-b4/lista-b4.component';
 import { SeleccionadorComponent } from './seleccionador/seleccionador.component';
 import { EditorPersonasComponent } from './editor-personas/editor-personas.component';
+import { SelecColorComponent } from './selec-color/selec-color.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaB4Component,
     SeleccionadorComponent,
-    EditorPersonasComponent
+    EditorPersonasComponent,
+    SelecColorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+.datoColor{
+    width: 3.5rem;
+}
+.campoColor{
+    width: 4.5rem;
+}
+#idCajaColor{
+    height: 40px;
+    border: 1px solid gainsboro;
+}
+#idCajaColores{
+    border: 1px solid white;   
+}
+.bot-color{
+    height:35px;
+}
+.bot-color:hover{
+    border:2px solid white;
+}
+*{
+    font-size: .75rem;
+}
