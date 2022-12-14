@@ -144,7 +144,56 @@
 
          </ol>
     </small>
-</div>
-<hr class="my-4">
+    </div>
 
+    <hr class="my-4">
+    
+    <div class="row">
+        <h5 class="text-primary">Componentes que devuelven valores
+            <pre class="d-inline">selec-alternativa</pre>
+        </h5>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipoSeleccion" id="inlineRadio1" value="radio" 
+              (click)="actualizarTipoSeleccion(inRadTipoSelRad.value)" #inRadTipoSelRad>
+        <label class="form-check-label" for="inlineRadio1">Radio Button</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipoSeleccion" id="inlineRadio2" value="checkbox" checked
+        (click)="actualizarTipoSeleccion(inRadTipoSelCheck.value)" #inRadTipoSelCheck>
+        <label class="form-check-label" for="inlineRadio2">Checkbox</label>
+    </div>
+    <div class="row table-success mt-3">
+        <div class="col-sm-3  p-2">
+            <app-select-alternativa  (eeCambioDeValores)="valorPelicula = $event" 
+            [campo]="campoPelicula" [layout]="layoutPelicula"></app-select-alternativa>
+        </div>
+        <div class="col-sm-3  m-2 text-center table-light border border-secondary rounded-lg">
+            <br>
+            <strong class="text-secondary h4">Valor Elegido:</strong> <br><br>
+            <span class="text-danger h5">{{valorPelicula}}</span>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            <strong>El componente de selecci&oacute;n recibe objetos</strong> que provienen del componente (usando el decorador  
+            <code class="font-weight-bold">@Input()</code>).<br>
+            El componente <strong>publica los cambios de valor</strong> por medio del uso de un objeto emisor de eventos
+            <code class="font-weight-bold">EventEmitter&lt;string&gt;</code> y del decorador
+            <code class="font-weight-bold">@Output</code>. <br>
+            <strong>Se le pasan objetos al seleccionador</strong> por medio de 
+            <code class="font-weight-bold">[campo]="campoPelicula"</code>, que indica el uso de 
+            una <i>Input property</i> llamada 'campo' (que tomar&aacute; el valor del objeto local
+            'campoPelicula'). Tambi&eacute;n <strong>se escucha el evento </strong> 
+            publicado por el componente. &Eacute;sto le permite recibir los valores devueltos por el componente
+            (el seleccionador).
+        </small>
+    </div>
+
+
+    <hr class="my-4">
+    
 </div>

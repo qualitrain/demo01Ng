@@ -7,6 +7,7 @@ import { ListaB4Component } from './lista-b4/lista-b4.component';
 import { SeleccionadorComponent } from './seleccionador/seleccionador.component';
 import { EditorPersonasComponent } from './editor-personas/editor-personas.component';
 import { SelecColorComponent } from './selec-color/selec-color.component';
+import { SelectAlternativaComponent } from './select-alternativa/select-alternativa.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SelecColorComponent } from './selec-color/selec-color.component';
     ListaB4Component,
     SeleccionadorComponent,
     EditorPersonasComponent,
-    SelecColorComponent
+    SelecColorComponent,
+    SelectAlternativaComponent
   ],
   imports: [
     BrowserModule,
