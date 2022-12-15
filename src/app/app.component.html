@@ -1,6 +1,6 @@
 <div class="container">
   <h4 class="text-center my-4 text-primary">{{title}}</h4>
-  <h5 class="text-primary mb-4">Componente <pre class="d-inline">lista-b4</pre> (3 instancias)</h5>
+  <h5 class="text-primary mb-4">Directivas estructurales e Interpolaci&oacute;n: Componente <pre class="d-inline">lista-b4</pre> (3 instancias)</h5>
   <div class="row">
     <div class="col-sm table-warning p-2 rounded">
           <app-lista-b4></app-lista-b4>
@@ -23,7 +23,7 @@
 
   </div>
   <hr class="my-4">
-  <h5 class="text-primary">Componente <pre class="d-inline">seleccionador</pre> configurable</h5>
+  <h5 class="text-primary">Par&aacute;metros de Entrada y class Binding: Componente <pre class="d-inline">seleccionador</pre> configurable</h5>
   <div class="row">
     <div class="col-sm-4 p-2">
             <app-seleccionador paramNombre="taller" 
@@ -91,10 +91,10 @@
 </div>
 <hr  class="my-4">
 <div class="row">
+    <h5 class="text-primary">NgModel y Binding bidireccional: Componente
+        <pre class="d-inline">editor-personas</pre>
+    </h5>
     <div class="offset-sm-3 col-sm-6">
-        <h5 class="text-primary">Componente
-            <pre class="d-inline">editor-personas</pre>
-        </h5>
         <app-editor-personas></app-editor-personas>
     </div>
 </div>
@@ -106,7 +106,7 @@
 </div>
 <hr class="my-4">
 <div class="row mt-5">
-    <h5 class="text-primary">Componente <pre class="d-inline">selec-color</pre> (4 instancias)</h5>
+    <h5 class="text-primary">Style Binding y Evento Click: Componente <pre class="d-inline">selec-color</pre> (4 instancias)</h5>
 </div>
 <div class="row mt-4">
     <div class="col-sm ">
@@ -192,8 +192,50 @@
             (el seleccionador).
         </small>
     </div>
-
-
-    <hr class="my-4">
+   <hr class="my-4">
+   <div class="row">
+        <h5 class="text-primary">Componentes que reciben html
+            <pre class="d-inline">toggler</pre>
+        </h5>
+    </div>
+    <div class="row table-secondary mt-3 rounded-lg">
+        <div class="col-md-12  p-2">
+            <app-toggler etiquetaUno="Destinos" etiquetaDos="Instrucciones">
+                <div uno>
+                    <span class="text-primary font-weight-bold">Destinos disponibles:</span>
+                    <ol>
+                        <li>
+                            Acapulco
+                        </li>
+                        <li>
+                            Veracruz
+                        </li>
+                        <li>
+                            Chiapas
+                        </li>
+                    </ol>
+                </div>
+                <div dos>
+                    <div class="text-warning font-weight-bold mb-2">C&oacute;mo obtener mayor informaci&oacute;n</div>
+                    Para explorar los destinos puede enviarnos un correo con el destino de inter&eacute;s 
+                    y sus preferencias en t&eacute;rminos de actividades o visitas y nosotros lo contactaremos 
+                    proporcion&aacute;ndole informaci&oacute;n detallada.
+                </div>
+            </app-toggler>
+        </div>
+    </div>
+ 
+    <div class="text-info text-muted mt-3 text-info text-justify">
+            <small>
+                <strong>El componente recibe fragmentos de c&oacute;digo Html</strong> usando etiquetas
+                <code class="font-weight-bold">&lt;ng-content&gt;</code>.<br>
+                El componente <strong>acomoda cada fragmento recibido en una secci&oacute;n de su vista</strong> 
+                por medio del uso de un atributo
+                <code class="font-weight-bold">selector</code> que permite elegir entre los distintos 
+                fragmentos recibidos (<strong>diferenciados por</strong> el uso de atributos "fake"). <br>
+            </small>
+        </div>
     
+    <hr class="my-4">
+
 </div>

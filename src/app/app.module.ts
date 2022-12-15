@@ -8,6 +8,7 @@ import { SeleccionadorComponent } from './seleccionador/seleccionador.component'
 import { EditorPersonasComponent } from './editor-personas/editor-personas.component';
 import { SelecColorComponent } from './selec-color/selec-color.component';
 import { SelectAlternativaComponent } from './select-alternativa/select-alternativa.component';
+import { TogglerComponent } from './toggler/toggler.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SelectAlternativaComponent } from './select-alternativa/select-alternat
     SeleccionadorComponent,
     EditorPersonasComponent,
     SelecColorComponent,
-    SelectAlternativaComponent
+    SelectAlternativaComponent,
+    TogglerComponent
   ],
   imports: [
     BrowserModule,
