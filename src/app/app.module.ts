@@ -9,6 +9,7 @@ import { EditorPersonasComponent } from './editor-personas/editor-personas.compo
 import { SelecColorComponent } from './selec-color/selec-color.component';
 import { SelectAlternativaComponent } from './select-alternativa/select-alternativa.component';
 import { TogglerComponent } from './toggler/toggler.component';
+import { TarjetaComponent } from './tarjeta/tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TogglerComponent } from './toggler/toggler.component';
     EditorPersonasComponent,
     SelecColorComponent,
     SelectAlternativaComponent,
-    TogglerComponent
+    TogglerComponent,
+    TarjetaComponent
   ],
   imports: [
     BrowserModule,

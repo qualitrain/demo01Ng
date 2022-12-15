@@ -237,5 +237,27 @@
         </div>
     
     <hr class="my-4">
+    <div class="row">
+        <h5 class="text-primary">Inyección de elementos DOM de la vista, en el controlador: Componente
+            <pre class="d-inline">tarjeta</pre>
+        </h5>
+    </div>
+    <div class="row table-secondary mt-3 rounded-lg">
+        <div class="col-sm-4 col-md-3  p-2">
+            <app-tarjeta titulo="Chiapas" accion="Reservar" imagen="Chiapas02.jpg" debug="true">
+                <div>
+                    Ubicado al Sureste de México es un destino que debe ser visitado, sí o sí.
+                </div>
+                <div class="mt-2" #titListaRelevante>Atractivos:</div>
+                <ul #listaRelevante>
+                    <li>Lagunas de Montebello</li>
+                    <li>Cascadas de Agua Azul</li>
+                    <li>San Cristobal de las Casas</li>
+                </ul>
+            </app-tarjeta>
+        </div>
+    </div>
+
+    <hr class="my-4">
 
 </div>

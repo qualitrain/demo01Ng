@@ -1,0 +1,18 @@
+<div class="card" style="width: 18rem;">
+    <img src="./assets/img/{{imagen}}" class="card-img-top" alt="..." #elemImagen>
+    <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <p class="card-text">
+            <ng-content></ng-content>
+        </p>
+        <a href="{{link}}" class="btn btn-primary" #btnAccion>{{accion}} </a>
+        <a href="#" class="btn btn-info ml-2" #btnAccion>Más Info</a>
+    </div>
+</div>
+<div *ngIf="debugOn">
+    <hr style="width: 18rem;">
+    <small>
+        <span class="font-weight-bold">Urls de botones:</span> {{urlsAccion}}
+    </small><br>
+    <a href={{urlImagen}}>Ver Imagen</a>
+</div>
