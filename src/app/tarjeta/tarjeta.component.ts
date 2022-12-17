@@ -1,19 +1,38 @@
-import { Component, Input, ElementRef, ViewChild, AfterViewInit, ViewChildren, AfterContentInit,
-         QueryList, ContentChild, ContentChildren } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild, AfterViewInit, ViewChildren, AfterContentInit, OnChanges,
+         QueryList, ContentChild, ContentChildren, Directive, Renderer2 } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
+
+@Directive({ selector:"[EsRelevante]"})
+export class EsRelevante{
+  constructor(private el:ElementRef, private renderer:Renderer2){}
+  get elem(){
+    return this.el;
+  }
+}
 
 @Component({
   selector: 'app-tarjeta',
   templateUrl: './tarjeta.component.html',
   styleUrls: ['./tarjeta.component.css']
 })
-export class TarjetaComponent implements AfterViewInit, AfterContentInit{
+export class TarjetaComponent implements AfterViewInit, AfterContentInit, OnChanges{
   ancho:number=18;
 
   @Input()
   debug:string="false";
-
   debugOn:boolean=false;
+
+  @Input()
+  demoView:string="false";
+  demoViewOn:boolean=false;
+
+  @Input()
+  demoContent:string="false";
+  demoContentOn:boolean=false;
+
+  @Input()
+  demoContentDirectiva:string="false";
+  demoContentDirectivaOn:boolean=false;
 
   @Input()
   titulo:string="Título";
@@ -45,15 +64,37 @@ export class TarjetaComponent implements AfterViewInit, AfterContentInit{
 
   textRelevante:string="";
 
-  ngOnInit():void {
-    if(this.debug==="true")
-      this.debugOn =true;
+  // Inyectar elementos que correspondan con la directiva indicada
+  @ContentChildren(EsRelevante, {descendants: true})
+  elemsDirRelevantes!:QueryList<ElementRef>;
+
+  textosDirEsRelevante:string="";
+
+  ngOnChanges():void {
+    console.log("***************** ngOnChanges() *****************");
+    if(this.debug ==="true")
+      this.debugOn = true;
     else
       this.debugOn = false;
+
+    if(this.demoView ==="true")
+      this.demoViewOn = true;
+    else
+      this.demoViewOn = false;
+
+    if(this.demoContent ==="true")
+      this.demoContentOn = true;
+    else
+      this.demoContentOn = false;
+
+      if(this.demoContentDirectiva ==="true")
+      this.demoContentDirectivaOn = true;
+    else
+      this.demoContentDirectivaOn = false;
   }
   
   ngAfterViewInit(): void {
-    console.log("***************** ngAfterViewInit() *****************")
+    console.log("***************** ngAfterViewInit() *****************");
     // ---------------- Mostrando valores de elemento inyectado @ViewChild ----------------
 
     /* 
@@ -67,24 +108,35 @@ export class TarjetaComponent implements AfterViewInit, AfterContentInit{
     for (let elemI of this.botonesLink){
       urlsBtnsAccion.push(elemI.nativeElement.href);
     }
-    console.log("\nBotones:")
-    console.log(this.botonesLink);
+  //  console.log("\nBotones:")
+  //  console.log(this.botonesLink);
     setTimeout(()=>this.urlsAccion = urlsBtnsAccion.join(", "),0);
   }
 
   ngAfterContentInit():void{
     console.log("***************** ngAfterContentInit() *****************")
-    console.log(this.elemsRelevantes);
+ //   console.log(this.elemsRelevantes);
     // ---------------- Mostrando valores de elemento inyectado @ContentChild ----------------
     let div:HTMLDivElement = this.elemNgContent.nativeElement;
     setTimeout(()=>this.titRelevante = div.innerText,0);
-    console.log(div);
+//    console.log(div);
 
     // ---------------- Mostrando valores de elementos inyectados @ContentChildren ----------------
     let textosRelevantes:string[]=[];
     this.elemsRelevantes.forEach( elemI => textosRelevantes.push(elemI.nativeElement.innerText));
     this.textRelevante = textosRelevantes.join(" / ");
-    console.log(this.elemsRelevantes);
-    console.log(textosRelevantes);
+//    console.log(this.elemsRelevantes);
+//    console.log(textosRelevantes);
+
+    // ---- Mostrando valores de elementos inyectados @ContentChildren que corresponden con una directiva ----
+//    console.log(this.elemsDirRelevantes)
+    let textosDirRelevante:string[]=[];
+    
+    this.elemsDirRelevantes.forEach( elemI => {
+      let directivaI:EsRelevante = elemI as unknown as EsRelevante;
+      textosDirRelevante.push(directivaI.elem.nativeElement.innerText);
+    });
+//    console.log(textosDirRelevante);
+    setTimeout( ()=>this.textosDirEsRelevante = textosDirRelevante.join(", "),0);
   }
 }

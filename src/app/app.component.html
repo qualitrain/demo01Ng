@@ -242,17 +242,34 @@
             <pre class="d-inline">tarjeta</pre>
         </h5>
     </div>
+    <div class="my-3" (change) = "configurarPruebaInyecElemDOM($event)">
+        <div class="mr-2">Probar: </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="cbxView" value="true">
+            <label class="form-check-label text-warning font-weight-bold" for="cbxView">@ViewChild y @ViewChildren</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="cbxContent" value="true">
+            <label class="form-check-label text-danger font-weight-bold" for="cbxContent">@ContentChild y @ContentChildren</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="cbxContDir" value="true">
+            <label class="form-check-label text-secondary font-weight-bold" for="cbxContDir">@ContentChildren sobre Directiva</label>
+        </div>
+    </div>
+
     <div class="row table-secondary mt-3 rounded-lg">
         <div class="col-sm-4 col-md-3  p-2">
-            <app-tarjeta titulo="Chiapas" accion="Reservar" imagen="Chiapas02.jpg" debug="true">
+            <app-tarjeta titulo="Chiapas" accion="Reservar" imagen="Chiapas02.jpg" 
+                         debug="true" [demoView]="pruebaInyeccView" [demoContent]="pruebaInyeccContent" [demoContentDirectiva]="pruebaInyeccContDir">
                 <div #Relevante>
                     Ubicado al Sureste de México es un destino que debe ser visitado, sí o sí.
                 </div>
                 <div class="mt-2" #titListaRelevante>Atractivos:</div>
                 <ul #Relevante>
-                    <li>Lagunas de Montebello</li>
+                    <li EsRelevante>Lagunas de Montebello</li>
                     <li>Cascadas de Agua Azul</li>
-                    <li>San Cristobal de las Casas</li>
+                    <li EsRelevante>San Cristobal de las Casas</li>
                 </ul>
             </app-tarjeta>
         </div>

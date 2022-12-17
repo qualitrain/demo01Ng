@@ -16,6 +16,10 @@ export class AppComponent {
   valorPelicula:string="";
   tipoSeleccion:string;
 
+  pruebaInyeccView:string="false";
+  pruebaInyeccContent:string="false";
+  pruebaInyeccContDir:string="false";
+
   constructor() {
     this.tipoSeleccion = "checkbox";
     this.campoPelicula = {
@@ -38,6 +42,31 @@ export class AppComponent {
     if(tipoSel !== this.layoutPelicula.tipo){
       this.layoutPelicula.tipo = tipoSel;
       this.valorPelicula = "";
+    }
+  }
+  configurarPruebaInyecElemDOM(evt:Event){
+  //  console.log("appComponent.configurarPruebaInyecElemDOM")
+    let chkPruebaInyeccion:HTMLInputElement = evt.target as HTMLInputElement;
+  //  console.log(chkPruebaInyeccion.id + ":" + chkPruebaInyeccion.checked);
+    switch(chkPruebaInyeccion.id){
+      case 'cbxView':
+        if(chkPruebaInyeccion.checked)
+           this.pruebaInyeccView="true";
+        else
+           this.pruebaInyeccView="false";
+        break;
+      case 'cbxContent':
+        if(chkPruebaInyeccion.checked)
+          this.pruebaInyeccContent ="true";
+        else
+          this.pruebaInyeccContent="false";
+       break;
+     case 'cbxContDir':
+        if(chkPruebaInyeccion.checked)
+          this.pruebaInyeccContDir ="true";
+        else
+          this.pruebaInyeccContDir="false";
+       break;
     }
   }
 }
