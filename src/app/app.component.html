@@ -226,15 +226,15 @@
     </div>
  
     <div class="text-info text-muted mt-3 text-info text-justify">
-            <small>
-                <strong>El componente recibe fragmentos de c&oacute;digo Html</strong> usando etiquetas
-                <code class="font-weight-bold">&lt;ng-content&gt;</code>.<br>
-                El componente <strong>acomoda cada fragmento recibido en una secci&oacute;n de su vista</strong> 
-                por medio del uso de un atributo
-                <code class="font-weight-bold">selector</code> que permite elegir entre los distintos 
-                fragmentos recibidos (<strong>diferenciados por</strong> el uso de atributos "fake"). <br>
-            </small>
-        </div>
+        <small>
+            <strong>El componente recibe fragmentos de c&oacute;digo Html</strong> usando etiquetas
+            <code class="font-weight-bold">&lt;ng-content&gt;</code>.<br>
+            El componente <strong>acomoda cada fragmento recibido en una secci&oacute;n de su vista</strong> 
+            por medio del uso de un atributo
+            <code class="font-weight-bold">selector</code> que permite elegir entre los distintos 
+            fragmentos recibidos (<strong>diferenciados por</strong> el uso de atributos "fake"). <br>
+        </small>
+    </div>
     
     <hr class="my-4">
     <div class="row">
@@ -273,6 +273,32 @@
                 </ul>
             </app-tarjeta>
         </div>
+    </div>
+
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            <strong>El componente inyecta elementos de la vista</strong> usando decoradores
+            <code class="font-weight-bold">@ViewChild</code>,
+            <code class="font-weight-bold">@ViewChildren</code>,
+            <code class="font-weight-bold">@ContentChild</code> y 
+            <code class="font-weight-bold">@ContentChildren</code>.
+            <br>
+            El componente ejemplifica el uso de una <strong>directiva para identificar elementos a inyectar.</strong> 
+            Esa directiva usa eventos para cambiar momentanemente la apariencia del elemento que la hospeda. <br>
+            Uso de <strong>m&eacute;todos hook </strong> <code class="font-weight-bold">ngAfterViewInit()</code> y
+            <code class="font-weight-bold">ngAfterContentInit()</code>.<br>
+            <strong>Modifica</strong> elementos de la <strong>vista, despu&eacute;s de</strong> que ha sido ya <strong>inicializada</strong>. Usa
+            <code class="font-weight-bold">setTimeout( ()=>this.textosDirEsRelevante = textosDirRelevante.join(", "), 0);</code>.<br>
+            Usa <strong>objetos especiales</strong> para manejo de referencias inyectadas y para uso de directivas:
+            <ul>
+                <li><code class="font-weight-bold">ElementRef</code></li>
+                <li><code class="font-weight-bold">QueryList&lt;ElementRef&gt;</code></li>
+                <li><code class="font-weight-bold">Renderer2</code></li>
+                <li><code class="font-weight-bold">@Directive</code></li>
+                <li><code class="font-weight-bold">@HostListener</code></li>
+                <li><code class="font-weight-bold">@HostBinding</code></li>
+            </ul>
+        </small>
     </div>
 
     <hr class="my-4">
