@@ -1,12 +1,33 @@
 import { Component, Input, ElementRef, ViewChild, AfterViewInit, ViewChildren, AfterContentInit, OnChanges,
-         QueryList, ContentChild, ContentChildren, Directive, Renderer2 } from '@angular/core';
-import { ViewportScroller } from '@angular/common';
+         QueryList, ContentChild, ContentChildren, Directive, Renderer2, HostListener,  
+         HostBinding } from '@angular/core';
 
 @Directive({ selector:"[EsRelevante]"})
-export class EsRelevante{
+export class EsRelevante {
+
+  @HostBinding('style.borderBottom')
+  bordeInferior:string="";
+
+  fondoHostOriginal!:string;
+
   constructor(private el:ElementRef, private renderer:Renderer2){}
+
   get elem(){
     return this.el;
+  }
+
+  @HostListener('mouseenter')
+  resaltarHost():void{
+    this.fondoHostOriginal = this.el.nativeElement.style.backgroundColor;
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+    this.bordeInferior = "2px dotted hsl(10,100%,50%)";
+    this.renderer.setStyle(this.el.nativeElement,"cursor","pointer");
+  }
+  @HostListener('mouseleave')
+  normalizarHost():void{
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.fondoHostOriginal);
+//   this.renderer.removeStyle(this.el.nativeElement, 'backgroundColor');
+    this.bordeInferior = "";
   }
 }
 
@@ -128,7 +149,7 @@ export class TarjetaComponent implements AfterViewInit, AfterContentInit, OnChan
 //    console.log(this.elemsRelevantes);
 //    console.log(textosRelevantes);
 
-    // ---- Mostrando valores de elementos inyectados @ContentChildren que corresponden con una directiva ----
+// ---- Mostrando valores de elementos inyectados @ContentChildren que corresponden con una directiva ----
 //    console.log(this.elemsDirRelevantes)
     let textosDirRelevante:string[]=[];
     
