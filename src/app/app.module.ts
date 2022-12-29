@@ -10,6 +10,7 @@ import { SelecColorComponent } from './selec-color/selec-color.component';
 import { SelectAlternativaComponent } from './select-alternativa/select-alternativa.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { TarjetaComponent, EsRelevante } from './tarjeta/tarjeta.component';
+import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TarjetaComponent, EsRelevante } from './tarjeta/tarjeta.component';
     SelectAlternativaComponent,
     TogglerComponent,
     TarjetaComponent,
-    EsRelevante
+    EsRelevante,
+    ConsultaPersonasComponent
   ],
   imports: [
     BrowserModule,
