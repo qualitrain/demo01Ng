@@ -11,6 +11,9 @@ import { SelectAlternativaComponent } from './select-alternativa/select-alternat
 import { TogglerComponent } from './toggler/toggler.component';
 import { TarjetaComponent, EsRelevante } from './tarjeta/tarjeta.component';
 import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas.component';
+import { ContenedorComponent } from './contenedor/contenedor.component';
+import { Prov2DatPersonasService } from './servicios/prov2-dat-persona.service';
+import { ProvDatPersonasService } from './servicios/prov-dat-persona.service'
 
 @NgModule({
   declarations: [
@@ -23,13 +26,18 @@ import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas
     TogglerComponent,
     TarjetaComponent,
     EsRelevante,
-    ConsultaPersonasComponent
+    ConsultaPersonasComponent,
+    ContenedorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  // Prueba a comentar o descomentar una de las líneas de providers...
+  // providers: [],
+  // providers: [ { provide:ProvDatPersonasService, useClass:Prov2DatPersonasService} ],
+  providers: [ ProvDatPersonasService ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

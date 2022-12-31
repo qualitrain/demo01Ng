@@ -19,6 +19,7 @@ export class ConsultaPersonasComponent {
   constructor(private provDatosInyectado: ProvDatPersonasService) { 
     this.personas = this.provDatosInyectado.getPersonas();
     this.nInstanciaServicio = this.provDatosInyectado.IdInstancia;
+    console.log("ConsultaPersonasComponent.contructor()");
     // this.personas queda apuntando al arreglo declarado en el servicio !!
   }
 

@@ -326,7 +326,7 @@
                 <li>
                     Cada <strong>instancia</strong> del componente de consulta <strong>solicita</strong>, con un <i class="text-primary">constructor</i> 
                     que recibe un objeto del mismo tipo que el del servicio solicitado, <strong>la inyecci&oacute;n de un servicio</strong> 
-                    de datos (un arreglo de personas).<br>
+                    de datos (un arreglo de personas).
                 </li>
                 <li>
                     Hay un servicio <i class="text-primary">ProvDatPersonaService</i> que es <strong>instanciado por</strong> el inyector de dependencias de Angular
@@ -346,6 +346,53 @@
             </ul>
         </small>
     </div>
+    <hr class="my-4">
+    <div class="row">
+        <h5 class="text-primary">Jerarqu&iacute;a de Inyecci&oacute;n: Componentes 
+            <pre class="d-inline">contenedor</pre> y 
+            <pre class="d-inline">consulta-personas</pre> (dos instancias) y servicios 
+            <pre class="d-inline">ProvDatPersonas</pre> y 
+            <pre class="d-inline">Prov2DatPersonas</pre>
+        </h5>
+    </div>
+    <div class="row  mt-4">
+        <div class="col-sm-12">
+            <app-contenedor></app-contenedor>
+        </div>
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            Ejemplo de <strong class="text-danger">servicio que es inyectado a nivel 
+            aplicaci&oacute;n, m&oacute;dulo, componente y componente anidado
+            </strong>.<br>
+            <ul>
+                <li>
+                    Hay <strong>dos servicios</strong> que implementan  <i class="text-primary">IServDatPersonas</i>:
+                    <i class="text-primary">ProvDatPersonasService</i> y <i class="text-primary">Prov2DatPersonasService</i>
+                </li>
+                <li>
+                    Los servicio est&aacute;n decorados con <code class="font-weight-bold">@Injectable(&#123; providedIn: 'root'&#125;)</code>, 
+                    que indica que debe haber <strong>una instacia por aplicaci&oacute;n</strong>.
+                </li>
+                <li>
+                    Hay un componente <i class="text-primary">contenedor</i> que <strong>anida dos instancias</strong> 
+                    del componente <i class="text-primary">consulta-personas</i>.
+                </li>
+                <li>
+                    <strong>Se definen providers</strong> en <i class="text-primary">AppModule</i>, 
+                    <i class="text-primary">ContenedorComponent</i> y <i class="text-primary">ConsultaPersonasComponent</i> 
+                    para <strong>probar la jerarqu&iacute;a de Inyecci&oacute;n</strong>  de dependencias
+                </li>
+                <li>
+                    Se prueba la <strong>inyecci&oacute;n de una implementaci&oacute;n en particular</strong> agregando
+                    a  <i>providers</i> lo siguiente: <code class="font-weight-bold">
+                    providers: [&#123; provide:ProvDatPersonasService, useClass:Prov2DatPersonasService&#125; ]</code>. El campo <code>provide</code>
+                    especifica <strong>el tipo</strong> y el campo <code>useClass</code>, <strong>la implementaci&oacute;n</strong> deseada.          
+                </li>
+            </ul>
+        </small>
+    </div>
+
     <hr class="my-4">
 
 </div>

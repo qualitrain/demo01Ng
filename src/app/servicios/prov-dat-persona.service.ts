@@ -11,6 +11,8 @@ export class ProvDatPersonasService implements IServDatPersonas{
   nInstancia:number=0;
 
   constructor() {
+    console.log("ProvDatPersonasService.constructor()");
+
     this.personas= [
       {idPersona:1, apPaterno:'Lora',apMaterno:'Jara',nombres:'Norma Nora',fechaNacAAAAMMDD:'1999-03-17'},
       {idPersona:2, apPaterno:'Mora',apMaterno:'Romo',nombres:'Fernando',fechaNacAAAAMMDD:'1999-07-12'},
