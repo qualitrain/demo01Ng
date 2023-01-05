@@ -394,5 +394,38 @@
     </div>
 
     <hr class="my-4">
+    <div class="row">
+        <h5 class="text-primary">Servicio como Motor de Coreografía: Componentes 
+            <pre class="d-inline">contenedor</pre>,  
+            <pre class="d-inline">consulta-personas</pre> (dos instancias),
+            <pre class="d-inline">notificador-baja</pre>
+             y servicio 
+            <pre class="d-inline">ProvDatPersonas</pre> (emisor de eventos)
+        </h5>
+    </div>
+    <div class="row  mt-4">
+        <div class="col-sm-12">
+            <app-contenedor notificarBajas="true"></app-contenedor>
+        </div>
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            Ejemplo de <strong class="text-danger">servicio que publica eventos a
+            partir de eliminaciones hechas por uno o m&aacute;s componentes, a los que
+            se suscribe otro componente para ejecutar alguna acci&oacute;n</strong>.<br>
+            <ul>
+                <li>
+                    El servicio <i class="text-primary">ProvDatPersonasService</i> usa un  <i class="text-primary">EventEmitter&lt;IPersona&gt;</i>
+                     para <strong>publicar la baja de una persona</strong> cuando uno de sus clientes le pide hacer una eliminaci&oacute;n
+                </li>
+                <li>
+                    El componente <i class="text-primary">notificador-baja</i> inyecta el servicio y <strong>se suscribe</strong> a la publicaci&oacute;n
+                    de bajas. Lleva un conteo de bajas y puede informar cuales han sido por medio de su bot&oacute;n
+                </li>
+            </ul>
+        </small>
+    </div>
+
+    <hr class="my-4">
 
 </div>

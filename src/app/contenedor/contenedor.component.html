@@ -1,8 +1,13 @@
-<div class="row justify-content-center col-sm-12 border border-dark border-3 rounded table-info">
-    <div class="col-sm-5 border border-primary p-2 m-3 rounded bg-white">
-        <app-consulta-personas></app-consulta-personas>
+<div class="border border-dark border-3 rounded table-secondary">
+    <div class="row justify-content-center col-sm-12 ">
+        <div class="col-sm-5 border border-primary p-2 m-3 rounded bg-white">
+            <app-consulta-personas></app-consulta-personas>
+        </div>
+        <div class="col-sm-5 border border-danger p-2 m-3 rounded bg-white">
+            <app-consulta-personas></app-consulta-personas>
+        </div>
     </div>
-    <div class="col-sm-5 border border-danger p-2 m-3 rounded bg-white">
-        <app-consulta-personas></app-consulta-personas>
+    <div class="row justify-content-center col-sm-12 " *ngIf="notificacionesOn">
+        <app-notificador-baja></app-notificador-baja>
     </div>
 </div>

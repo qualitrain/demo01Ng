@@ -13,7 +13,8 @@ import { TarjetaComponent, EsRelevante } from './tarjeta/tarjeta.component';
 import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas.component';
 import { ContenedorComponent } from './contenedor/contenedor.component';
 import { Prov2DatPersonasService } from './servicios/prov2-dat-persona.service';
-import { ProvDatPersonasService } from './servicios/prov-dat-persona.service'
+import { ProvDatPersonasService } from './servicios/prov-dat-persona.service';
+import { NotificadorBajaComponent } from './notificador-baja/notificador-baja.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProvDatPersonasService } from './servicios/prov-dat-persona.service'
     TarjetaComponent,
     EsRelevante,
     ConsultaPersonasComponent,
-    ContenedorComponent
+    ContenedorComponent,
+    NotificadorBajaComponent
   ],
   imports: [
     BrowserModule,
