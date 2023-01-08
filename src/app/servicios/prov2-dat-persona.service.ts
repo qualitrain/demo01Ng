@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { IPersona } from '../negocio/ipersona';
 import { IServDatPersonas } from './iservDatPersonas';
 
@@ -9,6 +9,7 @@ export class Prov2DatPersonasService implements IServDatPersonas{
   static nInstancias:number=0;
   personas:IPersona[]=[];
   nInstancia:number=0;
+  notificador:EventEmitter<IPersona>=new EventEmitter();
 
   constructor() {
     console.log("Prov2DatPersonasService.constructor()");
@@ -46,6 +47,11 @@ export class Prov2DatPersonasService implements IServDatPersonas{
     if (i===-1)
         return undefined;
     this.personas.splice(i,1);
+    this.publicarBaja(persona);
     return persona;
   }
+  publicarBaja(persona:IPersona){
+    this.notificador.emit(persona);
+  }
+
 }
