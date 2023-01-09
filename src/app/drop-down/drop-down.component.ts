@@ -7,7 +7,7 @@ import { GestorOpcionesDemoIDService } from "../servicios/GestorOpcionesDemoID.s
   selector: 'app-drop-down',
   templateUrl: './drop-down.component.html',
   styleUrls: ['./drop-down.component.css'],
-//  providers:[{provide:GestorOpcionesDemoIDService,useExisting:GestorOpcionesLibroService}]
+  providers:[{provide:GestorOpcionesDemoIDService,useExisting:GestorOpcionesLibroService}]
 //  providers:[{provide:GestorOpcionesDemoIDService,useClass:GestorOpcionesLibroService}]
 })
 export class DropDownComponent {
@@ -17,8 +17,8 @@ export class DropDownComponent {
  nInstancia:number=0;
 
  constructor(
-   @Host() // Terminar busqueda en Host
- //  @SkipSelf() //Empezar busqueda en el padre
+ //  @Host() // Terminar busqueda en Host
+   @SkipSelf() //Empezar busqueda en el padre
      @Optional()
      private provDropDown:GestorOpcionesDemoIDService) 
    {

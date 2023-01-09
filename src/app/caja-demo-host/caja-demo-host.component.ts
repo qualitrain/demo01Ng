@@ -10,7 +10,11 @@ import { GestorOpcionesLibroService } from '../servicios/GestorOpcionesLibro.ser
   styleUrls: ['./caja-demo-host.component.css'],
   providers:[ 
     { provide:GestorOpcionesDemoIDService, useClass:GestorOpcionesAnimalService },
+  ],
+  viewProviders:[ 
+    { provide:GestorOpcionesDemoIDService, useClass:GestorOpcionesLibroService },
   ]
+
 })
 export class CajaDemoHostComponent {
 
