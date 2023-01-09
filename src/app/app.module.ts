@@ -14,7 +14,8 @@ import { ConsultaPersonasComponent } from './consulta-personas/consulta-personas
 import { ContenedorComponent } from './contenedor/contenedor.component';
 import { Prov2DatPersonasService } from './servicios/prov2-dat-persona.service';
 import { ProvDatPersonasService } from './servicios/prov-dat-persona.service';
-import { NotificadorBajaComponent } from './notificador-baja/notificador-baja.component'
+import { NotificadorBajaComponent } from './notificador-baja/notificador-baja.component';
+import { DropDownComponent } from './drop-down/drop-down.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NotificadorBajaComponent } from './notificador-baja/notificador-baja.co
     EsRelevante,
     ConsultaPersonasComponent,
     ContenedorComponent,
-    NotificadorBajaComponent
+    NotificadorBajaComponent,
+    DropDownComponent
   ],
   imports: [
     BrowserModule,

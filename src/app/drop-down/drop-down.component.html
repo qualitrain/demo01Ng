@@ -1,0 +1,9 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{nombreBoton}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+      <a class="dropdown-item" href="{{ hRefOpciones[i] }}" 
+         *ngFor="let opcionI of nomOpciones; index as i" (click)="publicarEleccion(opcionI)">{{opcionI}}</a>
+    </div>
+  </div>
