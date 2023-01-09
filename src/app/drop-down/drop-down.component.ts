@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Host, Optional, SkipSelf } from '@angular/core';
 import { IGestorOpcionesService } from '../servicios/IGestorOpciones';
 import { GestorOpcionesLibroService } from "../servicios/GestorOpcionesLibro.service";
 import { GestorOpcionesDemoIDService } from "../servicios/GestorOpcionesDemoID.service";
@@ -7,21 +7,28 @@ import { GestorOpcionesDemoIDService } from "../servicios/GestorOpcionesDemoID.s
   selector: 'app-drop-down',
   templateUrl: './drop-down.component.html',
   styleUrls: ['./drop-down.component.css'],
-  providers:[
-  //  { provide: IGestorOpcionesService, useExisting: GestorOpcionesLibroService}
-    { provide: IGestorOpcionesService, useExisting: GestorOpcionesDemoIDService}
-
-  ]
+//  providers:[{provide:GestorOpcionesDemoIDService,useExisting:GestorOpcionesLibroService}]
+//  providers:[{provide:GestorOpcionesDemoIDService,useClass:GestorOpcionesLibroService}]
 })
 export class DropDownComponent {
  nombreBoton:string="Indefinido";
  nomOpciones:string[]=["opcion 0", "opcion 1"];
- hRefOpciones:string[]=["#","#"]
+ hRefOpciones:string[]=["#","#"];
+ nInstancia:number=0;
 
- constructor(private provDropDown:IGestorOpcionesService) {
-   this.nombreBoton = provDropDown.getNombreBoton();
-   this.nomOpciones = provDropDown.getNombresOpciones();
-   this.hRefOpciones = provDropDown.getLinks();
+ constructor(
+   @Host() // Terminar busqueda en Host
+ //  @SkipSelf() //Empezar busqueda en el padre
+     @Optional()
+     private provDropDown:GestorOpcionesDemoIDService) 
+   {
+     if(provDropDown){
+
+       this.nombreBoton = provDropDown.getNombreBoton();
+       this.nomOpciones = provDropDown.getNombresOpciones();
+       this.hRefOpciones = provDropDown.getLinks();
+       this.nInstancia = provDropDown.getNinstancia();
+      }
  }
  publicarEleccion(opcionElegida:string){
    this.provDropDown.publicar(opcionElegida);

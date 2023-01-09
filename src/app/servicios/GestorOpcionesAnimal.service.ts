@@ -4,17 +4,18 @@ import { IGestorOpcionesService } from './IGestorOpciones';
 @Injectable({
     providedIn: 'root'
 })
-export class GestorOpcionesLibroService extends IGestorOpcionesService{
-    nombreBoton:string="Libro";
-    opciones:string[]=["Alta","Consulta","Edición","Baja"];
-    linksOpciones:string[]=["#InDep04","#InDep04","#InDep04","#InDep04"];
+export class GestorOpcionesAnimalService extends IGestorOpcionesService{
+    nombreBoton:string="Animal";
+    opciones:string[]=["Perro","Tigre","Rinoceronte","Canguro","Ajolote"];
+    linksOpciones:string[]=["#","#","#","#","#"];
+
     static nInstancias=0;
     getNinstancia(): number {
-        return GestorOpcionesLibroService.nInstancias;
+        return GestorOpcionesAnimalService.nInstancias;
     }
     constructor(){  
         super();
-        GestorOpcionesLibroService.nInstancias++;
+        GestorOpcionesAnimalService.nInstancias++;
     }
     getNombreBoton():string{
         return this.nombreBoton;

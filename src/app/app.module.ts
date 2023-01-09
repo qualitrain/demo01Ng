@@ -15,7 +15,8 @@ import { ContenedorComponent } from './contenedor/contenedor.component';
 import { Prov2DatPersonasService } from './servicios/prov2-dat-persona.service';
 import { ProvDatPersonasService } from './servicios/prov-dat-persona.service';
 import { NotificadorBajaComponent } from './notificador-baja/notificador-baja.component';
-import { DropDownComponent } from './drop-down/drop-down.component'
+import { DropDownComponent } from './drop-down/drop-down.component';
+import { CajaDemoHostComponent } from './caja-demo-host/caja-demo-host.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DropDownComponent } from './drop-down/drop-down.component'
     ConsultaPersonasComponent,
     ContenedorComponent,
     NotificadorBajaComponent,
-    DropDownComponent
+    DropDownComponent,
+    CajaDemoHostComponent
   ],
   imports: [
     BrowserModule,

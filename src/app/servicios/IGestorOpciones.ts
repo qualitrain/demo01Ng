@@ -9,6 +9,8 @@ export abstract class IGestorOpcionesService{
 
     abstract getLinks():string[];
 
+    abstract getNinstancia():number;
+
     publicar(eleccion:string):void{
         this.publicador.emit(eleccion);
     }
