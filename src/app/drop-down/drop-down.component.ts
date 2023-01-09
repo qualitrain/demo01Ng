@@ -8,10 +8,8 @@ import { GestorOpcionesDemoIDService } from "../servicios/GestorOpcionesDemoID.s
   templateUrl: './drop-down.component.html',
   styleUrls: ['./drop-down.component.css'],
   providers:[
-    { 
-      provide: IGestorOpcionesService, useExisting: GestorOpcionesLibroService}
-//    ,
-//    { provide: IGestorOpcionesService, useExisting: GestorOpcionesDemoIDService}
+  //  { provide: IGestorOpcionesService, useExisting: GestorOpcionesLibroService}
+    { provide: IGestorOpcionesService, useExisting: GestorOpcionesDemoIDService}
 
   ]
 })

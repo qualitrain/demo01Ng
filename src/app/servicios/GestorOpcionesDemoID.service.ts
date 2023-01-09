@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { IGestorOpcionesService } from './IGestorOpciones';
 
 @Injectable({
-    providedIn: 'root', 
+    providedIn: 'root'
 })
 export class GestorOpcionesDemoIDService extends IGestorOpcionesService{
     nombreBoton:string="Inyección de Dependencia";
