@@ -1,10 +1,15 @@
 import { Component, Inject, Input } from '@angular/core';
 import { PARAMS_CIA } from '../servicios/InyectoresExtra';
 
+let getParams = function (){
+  return {nombre:"Mueblería Zaza", rutaLogo:"./assets/img/sillon.png"};
+}
+
 @Component({
   selector: 'app-titulo',
   templateUrl: './titulo.component.html',
-  styleUrls: ['./titulo.component.css']
+  styleUrls: ['./titulo.component.css'],
+  providers: [ { provide:PARAMS_CIA, useFactory:getParams  }]
 })
 export class TituloComponent {
   @Input()
