@@ -1,0 +1,19 @@
+<div class="table-warning p-3 mb-3 row">
+    <button class="btn  col-sm-3 col-md-2" id="idBtn01" #Btn01 
+        [disabled]="!suscripcionActiva"
+        [class] = "suscripcionActiva ? 'btn-success' :'btn-secondary' ">
+        {{suscripcionActiva ? "Haz click!" :"Ya no"}}
+    </button>
+    <div *ngIf="nClicks > 0" 
+        class="col-10 col-sm-8 col-md-9 col-lg-6 ml-auto  text-right">
+        <span class="badge badge-secondary badge-pill py-2 px-4 mb-1 mt-2">
+            {{nClicks}} clicks
+        </span>
+        <button class="btn btn-sm ml-4 " 
+            (click)="procesarSuscripcion()"
+            [class] = "suscripcionActiva ? 'btn-danger' :'btn-primary' ">
+            {{suscripcionActiva ? "Cancelar Suscripción" : "Reactivar Suscripción"}}
+        </button>
+    </div>  
+</div>
+
