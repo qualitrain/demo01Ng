@@ -561,7 +561,7 @@
     <hr class="my-4">
 
     <div class="row">
-        <h5 class="text-primary">Fundamentos de Observables: Componente 
+        <h5 class="text-primary">Introducci&oacute;n a Observables y RxJs: Componente 
             <pre class="d-inline">test-rxjs01</pre> 
         </h5>
     </div>
@@ -587,6 +587,42 @@
         </small>
     </div>
  
+    <hr class="my-4">
+
+    <div class="row">
+        <h5 class="text-primary">Funciones de Creaci&oacute;n de Observables: Componente 
+            <pre class="d-inline">test-rxjs02</pre> 
+        </h5>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-sm-10">
+            <app-test-rxjs02></app-test-rxjs02>
+        </div>
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify mt-5">
+        <small>
+            <ul>
+                <li>
+                    Los botones 'Hacer click' y 'Limpiar' tienen su observable que "escucha" los clicks.
+                </li>
+                <li>
+                    Hay un observable,<strong>creado con <i class="text-primary">interval</i>, que genera pulsos num&eacute;ricos</strong> (en secuencia) cada 1500 milisegundos.
+                </li>
+                <li>
+                    Una suscripci&oacute;n agrega elementos a la zona de resultados con cada click en el bot&oacute;n "hacer click".
+                </li>
+                <li>
+                    La otra suscripci&oacute;n limpia la zona de resultados con cada click en el bot&oacute;n "limpiar".
+                </li>
+                <li>
+                    Una suscripción al observable de los pulsos num&eacute;ricos actualiza el color vigente. 
+                </li>
+                <li>
+                    El color vigente es usado para colorear el tono actual y los elementos nuevos en la zona de resultados.
+                </li>
+            </ul>
+        </small>
+    </div>
     <hr class="my-4">
 
 </div>

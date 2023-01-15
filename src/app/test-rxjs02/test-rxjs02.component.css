@@ -1,0 +1,12 @@
+#divTonoAct{
+    border: 2px solid gainsboro; 
+    border-radius: 4px; 
+ 
+    margin-top: 4mm; 
+    height:1cm; 
+    color:white; 
+    
+    line-height: 1cm; 
+    text-align: center; 
+    font-weight: bold;
+}
