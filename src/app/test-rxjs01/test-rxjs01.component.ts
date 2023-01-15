@@ -35,7 +35,8 @@ export class TestRxjs01Component implements AfterViewInit{
   suscribirClick(){
     this.suscrClicksBoton01 = 
         this.observableBoton01.subscribe( (evtI:Event) => this.actualizarClicks(evtI));
-    this.suscripcionActiva = true;
+    setTimeout(() => this.suscripcionActiva = true,0);
+   // this.suscripcionActiva = true;
   }
 
   actualizarClicks(evt:Event):void{
