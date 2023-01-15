@@ -590,7 +590,7 @@
     <hr class="my-4">
 
     <div class="row">
-        <h5 class="text-primary">Funciones de Creaci&oacute;n de Observables: Componente 
+        <h5 class="text-primary">Funciones de Creaci&oacute;n de Observables (Adaptadores): Componente 
             <pre class="d-inline">test-rxjs02</pre> 
         </h5>
     </div>
@@ -623,6 +623,50 @@
             </ul>
         </small>
     </div>
+
+    <hr class="my-4">
+
+    <div class="row">
+        <h5 class="text-primary">Funci&oacute;n <pre class="d-inline">bindCallback</pre> : Componente 
+            <pre class="d-inline">test-rxjs03</pre> 
+        </h5>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-sm-10">
+            <app-test-rxjs03></app-test-rxjs03>
+        </div>
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify mt-5">
+        <small>
+            <ul>
+                <li>
+                    Este ejemplo muestra como <strong>envolver una funci&oacute;n as&iacute;ncrona</strong> dentro de otra que
+                    devuelve observables
+                </li>
+                <li>
+                    Con el uso de <i class="text-primary">bindCallback </i> <strong>se envuelve, en un proxy</strong>, una <strong>funci&oacute;n as&iacute;ncrona que devuelve
+                    un n&uacute;mero aleatorio</strong>.
+                </li>
+                <li>
+                    <strong>Se invoca a la funci&oacute;n por medio del proxy</strong>, que devuelve observables
+                </li>
+                <li>
+                    Con <strong>cada click</strong> se crea <strong>una nueva suscripci&oacute;n</strong>. En ella <strong>se provee el callback</strong>
+                    que espera la funci&oacute;n as&iacute;ncrona.
+                </li>
+                <li>
+                    El callback agrega una insignia a la vista, conteniendo los resultados devueltos
+                    por cada invocaci&oacute;n.
+                </li>
+                <li>
+                    De acuerdo al valor del n&uacute;mero al momento del click es el tiempo de espera de
+                    cada invocaci&oacute;n. Por ello, <strong>los resultados salenen un orden no secuencial</strong>  en
+                    la mayor&iacute;a de los casos.
+                </li>
+            </ul>
+        </small>
+    </div>
+
     <hr class="my-4">
 
 </div>

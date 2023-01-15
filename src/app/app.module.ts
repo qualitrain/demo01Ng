@@ -19,7 +19,8 @@ import { DropDownComponent } from './drop-down/drop-down.component';
 import { CajaDemoHostComponent } from './caja-demo-host/caja-demo-host.component';
 import { TituloComponent } from './titulo/titulo.component';
 import { TestRxjs01Component } from './test-rxjs01/test-rxjs01.component';
-import { TestRxjs02Component } from './test-rxjs02/test-rxjs02.component'
+import { TestRxjs02Component } from './test-rxjs02/test-rxjs02.component';
+import { TestRxjs03Component } from './test-rxjs03/test-rxjs03.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TestRxjs02Component } from './test-rxjs02/test-rxjs02.component'
     CajaDemoHostComponent,
     TituloComponent,
     TestRxjs01Component,
-    TestRxjs02Component
+    TestRxjs02Component,
+    TestRxjs03Component
   ],
   imports: [
     BrowserModule,
