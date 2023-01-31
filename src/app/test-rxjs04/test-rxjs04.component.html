@@ -1,0 +1,18 @@
+<div class="row" >
+    <p class="col-9 mb-1">¿ En qu&eacute; mes desea tomar sus vacaciones ?
+    </p>
+    <p class="col-3 mb-2 text-right">
+        <span class="badge badge-danger">Temporada Alta</span> <br>
+        <span class="badge badge-secondary">Temporada Baja</span><br>
+    </p>
+    <div id="idDivMeses" class="table-secondary p-2 rounded">
+        <span *ngFor="let mesI of meses; let i=index " 
+        [class.badge-danger]="mesesTemporadaAlta.includes(mesI)"
+        [class.badge-secondary]="!mesesTemporadaAlta.includes(mesI)"
+        class="badge mr-1 mt-3 py-2 badgeMes" >{{mesI}}</span>
+    </div>
+</div>
+<div class="row bg-light pl-2" *ngIf="temporadaBaja">
+<p class="text-success mt-3">Aproveche nuestras <span class="badge badge-success">promociones</span> de temporada baja, en 
+    <span class="badge badge-success">{{mesElegido}}</span></p>
+</div>

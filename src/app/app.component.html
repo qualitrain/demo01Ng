@@ -669,4 +669,48 @@
 
     <hr class="my-4">
 
+    <div class="row">
+        <h5 class="text-primary">Operadores RxJs : Componente
+            <pre class="d-inline">test-rxjs04</pre> 
+        </h5>
+    </div>
+    <h6 class="mt-3">Uso de m&eacute;todo <i>pipe</i> y de operadores de <i>mapeo</i> y <i>filtrado</i> sobre eventos</h6>
+    <div class="row justify-content-center mt-4">
+        <div class="col-sm-10">
+            <app-test-rxjs04></app-test-rxjs04>
+        </div>
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify mt-5">
+        <small>
+            <ul>
+                <li>
+                    Este ejemplo muestra como <strong>usar los operadores de RxJs</strong>.
+                <li>
+                    Se crea un <strong>observable sobre los clicks hechos en un &lt;div&gt;</strong> que a su vez contiene un elemento
+                    &lt;span&gt; por cada mes.
+                </li>
+                <li>
+                    <strong>Se crea una tuber&iacute;a de procesamiento (<i class="text-primary">pipe</i>)</strong> a partir del observable
+                </li>
+                <li>
+                    La tuber&iacute;a:
+                    <ol>
+                        <li>Extrae el elemento html del evento con el operador <i class="text-primary">map</i></li>
+                        <li>Filtra los elementos span con el operador <i class="text-primary">filter</i></li>
+                        <li>Extrae de los spans el texto (que contiene el nombre de un mes), con el operador <i class="text-primary">map</i></li>
+                        <li>Audita el mes con el operador <i class="text-primary">tap</i></li>
+                        <li>Filtra los meses que correspondan con temporada baja, con el operador <i class="text-primary">filter</i></li>
+                        <li>Genera un observable con el resultado final de la tuber&iacute;a</li>
+                    </ol>
+                </li>
+                <li>
+                    La suscripci&oacute;n sobre el observable anterior, actualiza el estado para que se despliegue 
+                    un mensaje que informa sobre promociones en temporada baja.
+                </li>
+            </ul>
+        </small>
+    </div>
+
+    <hr class="my-4">
+
 </div>
