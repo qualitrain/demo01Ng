@@ -1,0 +1,190 @@
+<div class="bg-light p-3 rounded">
+    <div class="my-3 border border-primary p-1 rounded" id="divConfig">
+        <div class="mr-2 form-check-inline">Mostrar: </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="cbxDesc" checked (click)="configurarDescripcion($event)">
+            <label class="form-check-label text-secondary " for="cbxDesc">Descripci&oacute;n</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="cbxCodigo" checked (click)="configurarCodigo($event)">
+            <label class="form-check-label text-secondary " for="cbxCodigo">C&oacute;digo ejemplo</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="cbxEjecucion" checked (click)="configurarEjecucion($event)">
+            <label class="form-check-label text-secondary " for="cbxEjecucion">Ejecuci&oacute;n ejemplo</label>
+        </div>
+    </div>
+
+    <div class="mb-2 row">
+        <span class="font-weight-bold  col-sm-12 col-md-4 text-info">Creaci&oacute;n condicional:</span>
+        <button class="btn btn-info" (click)="test_iif()">iif</button>
+    </div>
+    <div class="mb-2 row">
+        <span class="font-weight-bold col-sm-12 col-md-4 text-primary">Adaptadores:</span>
+        <button class="btn btn-primary mr-3" (click)="test_of()">of</button>
+        <button class="btn btn-primary" (click)="test_from()">from</button>
+    </div>
+    <div class="mb-2 row">
+        <span class="font-weight-bold col-xs-12 col-sm-12 col-md-4 text-danger">Temporizadores:</span>
+        <button class="btn btn-danger" (click)="test_timer()">timer</button>
+    </div>
+    <div class="mb-2 row">
+        <span class="font-weight-bold  col-sm-12 col-md-4 text-success">Integraci&oacute;n:</span>
+        <button class="btn btn-success mr-3" (click)="test_merge()">merge</button>
+        <button class="btn btn-success" (click)="test_concat()">concat</button>
+    </div>
+    <div class="px-3 py-1 rounded descripcion" *ngIf="mostrarOf && mostrarDescripcion">
+        <ul class="mt-4">
+            <li>Recibe uno o m&aacute;s valores, separados por comas, que se desean anidar dentro de observables</li>
+            <li>Cada valor individual puede ser de cualquier tipo (en el ejemplo, un solo valor de tipo arreglo)</li>
+            <li>Emite uno a uno, cada valor (anidado dentro de un observable) en el orden dado</li>
+            <li>Por defecto emite de modo s&iacute;ncrono
+            </li>
+            <li>Suele usarse para combinar valores concretos con otros que provienen de funciones as&iacute;ncronas.</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div id="codigoOf" class="table-warning rounded codigoEjm col-sm-12 col-md-7" *ngIf="mostrarOf && mostrarCodigo">
+<pre>
+let este=this;
+function getArreglo$(n?:number|undefined) &lbrace;    
+    return iif( () => <span class="relevante">n === undefined</span>,
+            <span class="relevante">of(</span>[12,33,15,22,3,10,8,9,99,98]<span class="relevante">)</span>,
+            interval(100).pipe(
+                tap(n => este.consola.desplegar("..procesando " + (n +1) )),
+                take(n!),
+                map(n => Math.trunc(Math.random() * 100)),
+                toArray()
+            ) 
+        );
+    &rbrace;
+<span class="relevante">setTimeout(</span>() => getArreglo$<span class="relevante">()</span>
+                .subscribe(arr => este.consola.desplegar(
+                    "\t\tcon limite indefinido: " + arr))
+                    ,<span class="relevante">0)</span>;
+getArreglo$(10).subscribe(arr => este.consola.desplegar("con limite definido: " + arr));</pre>
+        </div>
+        <div class="px-3 py-1 rounded descripcion" *ngIf="mostrarFrom && mostrarDescripcion">
+            <ul class="mt-4">
+                <li>Recibe un arreglo de valores que se desea anidar dentro de observables</li>
+                <li>Emite uno a uno, cada valor del arreglo (anidado dentro de un observable)</li>
+                <li>Por defecto emite de modo s&iacute;ncrono
+                </li>
+                <li>Suele usarse para combinar valores concretos con otros que provienen de funciones as&iacute;ncronas.</li>
+            </ul>
+        </div>
+        <div id="codigoFrom" class="table-warning rounded codigoEjm col-sm-12 col-md-7" *ngIf="mostrarFrom && mostrarCodigo">
+<pre>
+function getSecuencia$(n?:number|undefined)&lbrace;
+    return iif( ()=> n === undefined, 
+                <span class="relevante">from</span>([12,13,14,15,16,71,81,91,100,111]), 
+                interval(500).pipe(take(n!)) );
+&rbrace;
+
+<span class="relevante">setTimeout(</span>()=>getSecuencia$<span class="relevante">()</span>
+                .subscribe(
+                        i => this.consola.desplegar("\t\tcon limite indefinido, " + i))
+                ,<span class="relevante">0)</span>;
+getSecuencia$(10).subscribe(i => this.consola.desplegar("con limite definido, " + i) );</pre>
+        </div>
+        <div class="px-3 py-1 rounded descripcion" *ngIf="mostrarIif && mostrarDescripcion">
+            <ul class="mt-4">
+                <li>Recibe una funci&oacute;n booleana, que ser&aacute; evaluada en la suscripci&oacute;n</li>
+                <li>Recibe dos fuentes de observables</li>
+                <li>Si al evaluar la funci&oacute;n booleana se obtiene un valor verdadero, se devolver&aacute; la primera fuente observable.
+                </li>
+                <li>Si al evaluar la funci&oacute;n booleana se obtiene un valor falso, se devolver&aacute; la segunda fuente observable.</li>
+            </ul>
+        </div>
+        <div id="codigoIif" class="table-warning rounded codigoEjm col-sm-12 col-md-7" *ngIf="mostrarIif && mostrarCodigo">
+            <pre>
+function getSecuencia$(n?:number|undefined)&lbrace;
+    return <span class="relevante">iif( ()=>n === undefined, 
+        interval(500).pipe(take(10)), 
+        interval(700).pipe(take(n!)) )</span>;
+        &rbrace;
+        
+getSecuencia$<span class="relevante">()</span>.subscribe(i => this.consola.desplegar(
+            "\t\tcon limite indefinido, " + i));
+getSecuencia$<span class="relevante">(7)</span>.subscribe(i => this.consola.desplegar(
+            "con limite definido, " + i));</pre>
+        </div>
+        <div class="px-3 py-1 rounded descripcion" *ngIf="mostrarTimer && mostrarDescripcion">
+            <ul class="mt-4">
+                <li>Genera una &uacute;nica emisi&oacute;n, con valor = 0</li>
+                <li>Recibe un lapso de tiempo en milisegundos</li>
+                <li>Cuando se suscriben al observable, arranca un temporizador y cuando &eacute;ste llega al lapso
+                    de tiempo especificado, emite un cero.
+                </li>
+                <li>Suele utilizarse en combinación con otros flujos de observables.</li>
+            </ul>
+        </div>
+        <div id="codigoTimer" class="table-warning rounded codigoEjm col-sm-12 col-md-7" *ngIf="mostrarTimer && mostrarCodigo">
+            <pre>
+<span class="relevante">const alarma$ = timer(5000);</span>
+<span class="relevante">alarma$</span>.subscribe(val => this.consola.desplegar("Valor=" + val));
+
+interval(500).pipe(
+    take(<span class="font-weight-bolder text-danger">40</span>),
+    takeUntil(<span class="relevante">alarma$</span>)
+    ).subscribe(pulso => this.consola.desplegar(""+pulso));</pre>
+        </div>
+        <div class="px-3 py-1 rounded descripcion" *ngIf="mostrarMerge && mostrarDescripcion">
+            <ul class="mt-4">
+                <li>Combina varios flujos de eventos.</li>
+                <li>Se suscribe simult&aacute;nemente a todos los flujos.</li>
+                <li>Emite un valor a la vez en el orden en que llegue cada valor, independientemente de que provenga de un flujo u otro.</li>
+            </ul>
+        </div>
+        <div id="codigoMerge" class="table-warning rounded codigoEjm col-sm-12 col-md-7" *ngIf="mostrarMerge && mostrarCodigo">
+            <pre>
+const <span class="relevante">pulso1$</span> = interval(1000).pipe(
+    map(n=> (n + 101) ),
+    take(3)
+    );
+const <span class="relevante">pulso2$</span> = interval(1400).pipe(
+    map(n=> (n + 201) ),
+    take(4)
+    );
+const <span class="relevante">pulso3$</span> = interval(500).pipe(
+    map(n=> (n + 301) ),
+    take(14)
+    );
+    
+const <span class="relevante">combinacion123Merge$ = merge(
+    pulso1$, pulso2$, pulso3$
+    );</span>
+<span class="relevante">combinacion123Merge$</span>.subscribe( num => this.consola.desplegar("" + num));</pre>
+        </div>
+        <div class="px-3 py-1 rounded descripcion" *ngIf="mostrarConcat && mostrarDescripcion">
+            <ul class="mt-4">
+                <li>Combina varios flujos de eventos.</li>
+                <li>Se suscribe y emite todos los valores de un flujo, luego se suscribe y emite todos los valores del flujo 
+                    siguiente y as&iacute; sucesivamente.</li>
+            </ul>
+        </div>
+        <div id="codigoConcat" class="px-1 py-1 table-warning rounded codigoEjm col-sm-12 col-md-7" *ngIf="mostrarConcat && mostrarCodigo">
+            <pre>
+const <span class="relevante">pulso1$</span> = interval(1000).pipe(
+    map(n=> (n + 101) ),
+    take(3)
+    );
+const <span class="relevante">pulso2$</span> = interval(1400).pipe(
+    map(n=> (n + 201) ),
+    take(4)
+    );
+const <span class="relevante">pulso3$</span> = interval(500).pipe(
+    map(n=> (n + 301) ),
+    take(14)
+    );
+    
+const <span class="relevante">combinacion123Concat$ = concat(
+    pulso1$, pulso2$, pulso3$
+    );</span>
+<span class="relevante">combinacion123Concat$</span>.subscribe( num => this.consola.desplegar("" + num));</pre>
+        </div>
+        <div id="resultados" class="p-1 rounded col-sm-12 col-md-5" [class]="getColorFondoResultados()" 
+            *ngIf="mostrarAlgo() && mostrarEjecucion">
+        </div>
+    </div>
+</div>

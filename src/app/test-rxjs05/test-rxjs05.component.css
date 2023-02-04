@@ -1,0 +1,35 @@
+button {
+    width: 2cm;
+}
+.relevante{
+    font-weight: bolder;
+    color: hsl(345,100%,70%);
+}
+.codigoEjm{
+    box-sizing: border-box; /* contabilizar en ancho y largo márgenes internos y externos */
+
+    font-size: .9rem;
+
+    height: 7cm;
+
+    overflow: hidden;
+
+    padding: 10px !important;
+}
+.codigoEjm:hover, #resultados:hover{
+    overflow: auto;  
+}
+#resultados{
+    border-left: 2px solid white;
+    box-sizing: border-box; /* contabilizar en ancho y largo márgenes internos y externos */
+
+    font-size: .8rem;
+    font-family: 'Consolas', Courier, monospace;
+
+    height: 7cm;
+
+    overflow: hidden;
+}
+.descripcion{
+    font-size: .8rem;;
+}
