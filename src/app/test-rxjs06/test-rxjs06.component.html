@@ -1,0 +1,33 @@
+<div [hidden]="!demoMapFilterOn">
+    <div class="row p-2 m-1">
+        <div class="col text-primary font-weight-bold">
+            Demo de los <i>operadores RxJS </i> <code>map</code> y <code>filter</code>.
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="form-group col">
+        <label for="idTexto">Texto:</label>
+        <input type="text" class="form-control" name="texto" id="idTexto" >
+        </div>
+    </div>
+    <div class="row table-primary p-2 m-1">
+        <div class="col-12 text-primary">
+            Mapeo de <code>Event</code> a <code>HTMLInputElement</code> y luego a
+            valores tipo <code>string</code>:
+        </div>
+        <div class="col">
+            {{ valores }}
+        </div>
+    </div>
+    <div class="row p-2 mx-1 mt-3 table-info rounded-lg">
+        <div class="font-weight-bold col-12 mb-2">
+            Instrucciones:
+        </div>
+        <div class="text-muted col-12">
+            Introduzca texto y prueba a capturar espacios al inicio, n&uacute;meros o caracteres
+            especiales.
+        </div>
+    </div>
+</div>
+

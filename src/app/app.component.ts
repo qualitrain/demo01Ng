@@ -20,6 +20,8 @@ export class AppComponent {
   pruebaInyeccContent:string="false";
   pruebaInyeccContDir:string="false";
 
+  testFilterOn:boolean=true;
+
   constructor() {
     this.tipoSeleccion = "checkbox";
     this.campoPelicula = {
