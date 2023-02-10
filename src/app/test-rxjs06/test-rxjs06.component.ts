@@ -1,5 +1,5 @@
 import { Component,AfterViewInit } from '@angular/core';
-import { fromEvent, pipe, Subscription, from, interval, of, map, filter } from 'rxjs';
+import { fromEvent, Subscription, map, filter, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-test-rxjs06',
@@ -13,7 +13,9 @@ export class TestRxjs06Component implements AfterViewInit{
   suscrEntradaTexto?: Subscription;
   
   get valores(){ 
-    return this.entradas.join(', ');
+    let valoresEnHtml:string = this.entradas.join(',');
+    valoresEnHtml =  valoresEnHtml.replaceAll(' ',"\u00A0"); //poner espacio que no rompe líneas
+    return valoresEnHtml.replaceAll(',',', ');
   }
 
   ngAfterViewInit(): void {
@@ -27,7 +29,7 @@ export class TestRxjs06Component implements AfterViewInit{
       map(evtI => evtI as Event),
       map(evtI => evtI.target as HTMLInputElement),
       map(elemI => elemI.value.trimStart() ),
-      filter( (valI) => valI.length > 2 ),
+      filter( (valI) => valI.length > 0 ),
       map( valI => this.esCaracValido( valI.charAt(valI.length - 1) ) ? 
                                  valI : 
                                  valI.slice(0,valI.length - 1) )
@@ -40,15 +42,7 @@ export class TestRxjs06Component implements AfterViewInit{
     });
 
   }
-  getPipeFiltrado(){
-    return pipe(
-      map(evtI => evtI as Event),
-      map(evtI => evtI.target as HTMLInputElement),
-      map(elemI => elemI.value.trimStart() ),
-      filter( (valI) => valI.length > 2 ),
-      map( valI => this.esCaracValido( valI.charAt(valI.length - 1) ) ? valI : valI.slice(0,valI.length - 1) )
-    );
-  }
+
   esCaracValido(car:string){
     const expReg = /^[a-záéíóúñ ]$/i;
     return expReg.test(car);
