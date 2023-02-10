@@ -21,6 +21,7 @@ export class AppComponent {
   pruebaInyeccContDir:string="false";
 
   testFilterOn:boolean=true;
+  testFirstLastTakeLastOn:boolean=true;
 
   constructor() {
     this.tipoSeleccion = "checkbox";

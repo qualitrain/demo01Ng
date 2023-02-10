@@ -1,0 +1,8 @@
+#consolaRxjs7{
+    height: 5cm;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+#consolaRxjs7:hover {
+    overflow: scroll;
+}
