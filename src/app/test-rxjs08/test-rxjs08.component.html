@@ -1,0 +1,43 @@
+<div class="p-2">
+    <div [hidden]="!demoDebounceTime">
+        <div class="text-primary font-weight-bold mb-1">
+            Demo de <code> debounceTime</code>.
+        </div>
+        <div class="row pr-2">
+            <div class="col-12">
+                <div class="form-group">
+                <label for="{{idInTest}}">Texto de prueba:</label>
+                <input type="text" class="form-control" name="" id="{{idInTest}}" >
+            </div>
+        </div>
+        </div>
+        <div class="row pr-2 mt-2 mx-1 ">
+            <div class="col-12 entradas rounded-lg px-0 table-primary">
+                <h6 class=" bg-primary text-center text-white rounded-top py-1">
+                    Eventos <i>input</i> sin filtrado <i>debounce </i> 
+                    <span class="badge badge-pill badge-light" [hidden]="nInputs === 0"> {{nInputs}}</span>
+                </h6>
+                <div class="p-2">
+                    {{ entradasSinFiltro }}
+                </div>
+            </div>
+            <div class="col-12 table-warning entradas rounded-lg mt-3 px-0">
+                <h6 class="bg-danger text-center text-white rounded-top py-1">
+                    Eventos <i>input</i> filtrados aplicando <i>debounce </i>
+                    <span class="badge badge-pill badge-light" [hidden]="nInputsOptimizadas === 0"> {{nInputsOptimizadas}}</span>
+                </h6>
+                <div class="p-2">
+                    {{ entradasFiltradas }}
+                </div>
+            </div>
+        </div>
+        <div class="row p-2 mx-1 mt-3 table-info rounded-lg">
+            <div class="font-weight-bold col-12 mb-2">
+                Instrucciones:
+            </div>
+            <div class="text-muted col-12">
+                Introduzca texto y observe los eventos <i>input</i> reportados.
+            </div>
+        </div>
+    </div>
+</div>
