@@ -1,0 +1,47 @@
+<div  [hidden]="!demoDebounce">
+    <div class="text-primary font-weight-bold mb-1">
+        Demo de <code> debounce</code>, <code>debounceTime</code>, <code>throttle</code> y <code>throttleTime</code>
+    </div>
+    <div class="row pr-2 mt-3">
+        <div class="col-12" >
+            <div class="bg-dark text-white text-center rounded-top">Caja de Dibujo</div>
+            <div class="bg-warning rounded-bottom cajaClicks " id="{{idDivTest}}"></div>
+        </div>
+        <div class="col-12 mt-2 " *ngIf="altoDivTest">
+            <div class="rounded-lg border border-warning" >
+                <app-canvas01 [puntos]="puntos" [alto]="altoDivTest" [ancho]="anchoDivTest"></app-canvas01>
+            </div>
+        </div>
+        <div class="col-12 mt-2 ">
+            <label class="col-sm-1 offset-sm-1 col-form-label text-right" for="{{idInputMilis}}">Milis:</label>
+            <input type="number" class="col-form-control col-sm-1" id="{{idInputMilis}}" step="10" min="10" value="{{milis}}">
+            <div class="form-check form-check-inline ml-4">
+                <input class="form-check-input" type="radio" id="{{idRadioThrottleTime}}" value="throttleTime" name="operador">
+                <label class="form-check-label" for="{{idRadioThrottleTime}}">throttleTime</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="{{idRadioThrottle}}" value="throttle" name="operador" checked>
+                <label class="form-check-label" for="{{idRadioThrottle}}">throttle</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="{{idRadioDebounceTime}}" value="debounceTime"  name="operador">
+                <label class="form-check-label" for="{{idRadioDebounceTime}}">debounceTime</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="{{idRadioDebounce}}" value="debounce"  name="operador">
+                <label class="form-check-label" for="{{idRadioDebounce}}">debounce</label>
+            </div>
+            <button class="col-sm-2 col-lg-1 btn btn-primary offset-sm-1" (click)="limpiarCanvas()">Limpiar</button>
+        </div>
+    </div>
+    <div class="row p-2 mx-1 mt-3 table-info rounded-lg">
+        <div class="font-weight-bold col-12 mb-2">
+            Instrucciones:
+        </div>
+        <div class="text-muted col-12">
+            Mueva lentamente el cursor del rat&oacute;n dentro de la caja de dibujo y observe
+            lo que sucede en la caja inferior. 
+        </div>
+    </div>
+</div>
+

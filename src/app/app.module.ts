@@ -26,6 +26,8 @@ import { TestRxjs05Component } from './test-rxjs05/test-rxjs05.component';
 import { TestRxjs06Component } from './test-rxjs06/test-rxjs06.component';
 import { TestRxjs07Component } from './test-rxjs07/test-rxjs07.component';
 import { TestRxjs08Component } from './test-rxjs08/test-rxjs08.component'
+import { Canvas01Component } from './canvas01/canvas01.component';
+import { TestRxjs09Component } from './test-rxjs09/test-rxjs09.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { TestRxjs08Component } from './test-rxjs08/test-rxjs08.component'
     TestRxjs05Component,
     TestRxjs06Component,
     TestRxjs07Component,
-    TestRxjs08Component
+    TestRxjs08Component,
+    Canvas01Component,
+    TestRxjs09Component
   ],
   imports: [
     BrowserModule,
