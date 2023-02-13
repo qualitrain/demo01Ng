@@ -1,6 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { bufferTime, fromEvent, interval, map, Subscription, take, tap } from 'rxjs';
+import { bufferCount, bufferTime, fromEvent, interval, map, Subscription, take} from 'rxjs';
 
 @Component({
   selector: 'app-test-rxjs11',
@@ -23,6 +22,8 @@ export class TestRxjs11Component implements AfterViewInit, OnDestroy{
 
   nClicks=0;
 
+  ultCincoClicks:string="";
+
   constructor() { 
     this.idDivCajaBufferTime = this.getIdUnica("divTest");
   }
@@ -42,6 +43,10 @@ export class TestRxjs11Component implements AfterViewInit, OnDestroy{
     const clicksAcumuladosPeriodo$ = clicksDiv01$.pipe(
       bufferTime(this.PERIODO * 1000)
     );
+    const ultCincoClicks$ = clicksDiv01$.pipe(
+      bufferCount(5)
+    );
+    ultCincoClicks$.subscribe(arr5Clicks => this.ultCincoClicks = JSON.stringify(arr5Clicks));
 
     const cuentaRegresiva$ = interval(1000).pipe(
       map( n => this.PERIODO - n - 1),
@@ -56,6 +61,8 @@ export class TestRxjs11Component implements AfterViewInit, OnDestroy{
                               cuentaRegresiva$.subscribe( n => this.nSegundos = n);
                               this.nClicks = 0;
                           })
+
+    
     // Para cambiar el color de la caja con cada click:
     fromEvent(this.divCajaBufferTime as HTMLElement,"mousedown")
                                .subscribe(() => {
