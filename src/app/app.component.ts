@@ -22,6 +22,8 @@ export class AppComponent {
 
   testFilterOn:boolean=true;
   testFirstLastTakeLastOn:boolean=true;
+  testDebounceThrottleOn:boolean=true;
+  testReduceScanTakeUntil:boolean=true;
 
   constructor() {
     this.tipoSeleccion = "checkbox";

@@ -1,0 +1,44 @@
+<div>
+    <div class="row p-2 m-1">
+        <div class="col text-primary font-weight-bold">
+            Demo de los <i>operadores RxJS </i>   
+            <code>takeUntil</code>, <code>reduce</code>, <code>count</code>, <code>max</code> y <code>scan</code>
+        </div>
+    </div>
+    <div class="row p-2 m-1 justify-content-center">
+        <div class="col-3" [class.bg-warning]="!cursorDentroDeCaja" [class.bg-primary]="cursorDentroDeCaja" 
+             id="div03">
+        </div>
+    </div>
+    <div class="row p-2 m-1">
+        <div class="col-1">
+            <span class="text-white font-weight-bolder bg-danger px-2 rounded-pill"> 
+                {{ nSegundos }}
+            </span>
+        </div>
+        <div class="col-10 text-center" [hidden]="nSegundos > 0">
+            Durante los primeros <span class="text-info">{{ DURACION_TEST_MOUSEOVER }}</span> segundos, 
+            el cursor de mouse entró <span class="text-danger font-weight-bolder"> {{ totEntMouseC$ | async }}</span>
+            veces a la caja.
+        </div>
+        <div class="col-10" *ngIf="nSegundos > 0">
+        </div>
+        <div class="col-1">
+            <span class="text-warning font-weight-bolder bg-dark px-2 rounded-pill" [hidden]="nSegundos == 0"> 
+                {{ acumParcialEntradasMouse$ | async }}
+            </span>
+        </div>
+
+    </div>
+    <div class="row p-2 mx-1 mt-3 table-info rounded-lg">
+        <div class="font-weight-bold col-12 mb-2">
+            Instrucciones:
+        </div>
+        <div class="text-muted col-12">
+            Haga que el cursor del mouse entre y salga de la caja. Hágalo al inico de la
+            aplicaci&oacute;n. Si ya se ha vencido el tiempo inicial, recargue la p&aacute;gina
+            e intente nuevamente.
+        </div>
+    </div>
+</div>
+
