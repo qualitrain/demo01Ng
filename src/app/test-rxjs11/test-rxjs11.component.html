@@ -1,0 +1,52 @@
+<div>
+    <div class="row p-2 m-1">
+        <div class="col text-primary font-weight-bold">
+            Demo del <i>operador RxJS </i> <code>bufferTime</code>
+        </div>
+    </div>
+    <div class="row p-2 m-1">
+        <div class="col-5 bg-info py-5 cajaBufferTime" 
+                [class.bg-info]="!cajaBufferTimeEnClick" 
+                [class.bg-primary]="cajaBufferTimeEnClick"
+                id="{{idDivCajaBufferTime}}" >
+            <div class="text-white text-center mt-auto mb-auto"><span class="h5"> Hacer click en esta caja</span></div> 
+        </div>
+        <div class="col-7">
+            <div class="mb-2">
+                Clicks en los últimos <span class="text-danger font-weight-bold">{{ PERIODO }}</span> segundos
+            </div>
+            <div>
+                <span class="font-weight-bold">Cantidad:</span> {{ nClicksPeriodo }}
+            </div>
+            <div>
+                <span class="font-weight-bold">Coordenadas recolectadas:</span>
+            </div>
+            <div class="text-monospace text-danger" style="font-size: .75rem">
+                {{ clicksPeriodo }}
+            </div>
+            <hr>
+            <div class="mt-4">
+                Segundos restantes: 
+                <span class="text-white font-weight-bolder bg-danger px-2 rounded-pill"> 
+                    {{ nSegundos }}
+                </span>    
+            </div>
+            <div class="mt-2">
+                Clicks actuales: 
+                <span class="text-white font-weight-bolder bg-primary px-2 rounded-pill"> 
+                    {{ nClicks }}
+                </span>    
+            </div>
+        </div>
+
+    </div>
+    <div class="row p-2 mx-1 mt-3 table-info rounded-lg">
+        <div class="font-weight-bold col-12 mb-2">
+            Instrucciones:
+        </div>
+        <div class="text-muted col-12">
+            De clicks soble la caja, preferentemente en distintas zonas y espere 5 segundos. Luego, repita la operaci&oacute;n un 
+            par de veces más.
+        </div>
+    </div>
+</div>
