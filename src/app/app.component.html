@@ -1,153 +1,164 @@
 <div class="container">
   <h4 class="text-center my-4 text-primary">{{title}}</h4>
-  <h5 class="text-primary mb-4">Directivas estructurales e Interpolaci&oacute;n: Componente <pre class="d-inline">lista-b4</pre> (3 instancias)</h5>
-  <div class="row">
-    <div class="col-sm table-warning p-2 rounded">
-          <app-lista-b4></app-lista-b4>
+  <div *ngIf="directivasEstructuralesInterpolacionOn">
+    <h5 class="text-primary mb-4">Directivas estructurales e Interpolaci&oacute;n: Componente <pre class="d-inline">lista-b4</pre> (3 instancias)</h5>
+    <div class="row">
+        <div class="col-sm table-warning p-2 rounded">
+            <app-lista-b4></app-lista-b4>
+        </div>
+        <div class="col-sm  p-2 rounded">
+            <app-lista-b4></app-lista-b4>
+        </div>
+        <div class="col-sm table-primary p-2 rounded">
+            <app-lista-b4></app-lista-b4>
+        </div>
     </div>
-    <div class="col-sm  p-2 rounded">
-        <app-lista-b4></app-lista-b4>
-    </div>
-    <div class="col-sm table-primary p-2 rounded">
-        <app-lista-b4></app-lista-b4>
-    </div>
-  </div>
-  <div class="row my-3">
-      <small class="text-muted">Ejemplo del uso del <span class="font-italic font-weight-bold text-danger">interpolation binding</span>. 
-          Cada instancia del componente lee un arreglo declarado en su controlador y muestra sus valores 
-          usando expresiones del tipo <code class="font-weight-bold">{{ </code> <code class="font-weight-bold">opciones[0] }}</code> y  
-          <code class="font-weight-bold">{{ </code> <code class="font-weight-bold">opcionI }}</code> 
-          con un <code class="font-weight-bold">*ngFor=</code><code class="font-weight-bold">"let opcionI of opciones" </code>.<br>
-          Se hace uso de diversas clases del <span class="font-italic">framework </span>  <code>Bootstrap 4</code>.
-      </small>
+    <div class="row my-3">
+        <small class="text-muted">Ejemplo del uso del <span class="font-italic font-weight-bold text-danger">interpolation binding</span>. 
+            Cada instancia del componente lee un arreglo declarado en su controlador y muestra sus valores 
+            usando expresiones del tipo <code class="font-weight-bold">{{ </code> <code class="font-weight-bold">opciones[0] }}</code> y  
+            <code class="font-weight-bold">{{ </code> <code class="font-weight-bold">opcionI }}</code> 
+            con un <code class="font-weight-bold">*ngFor=</code><code class="font-weight-bold">"let opcionI of opciones" </code>.<br>
+            Se hace uso de diversas clases del <span class="font-italic">framework </span>  <code>Bootstrap 4</code>.
+        </small>
 
+    </div>
+    <hr class="my-4">
   </div>
-  <hr class="my-4">
-  <h5 class="text-primary">Par&aacute;metros de Entrada y class Binding: Componente <pre class="d-inline">seleccionador</pre> configurable</h5>
-  <div class="row">
-    <div class="col-sm-4 p-2">
+
+  <div *ngIf="parametrosEntradaYclassBindingOn">
+    <h5 class="text-primary">Par&aacute;metros de Entrada y class Binding: Componente <pre class="d-inline">seleccionador</pre> configurable</h5>
+    <div class="row">
+        <div class="col-sm-4 p-2">
             <app-seleccionador paramNombre="taller" 
                                paramEtiquetas="Cocina,Electricidad,Pintura,Artes Plasticas" 
                                paramValores="C,E,P,AP"
                                paramConBorde="true"
                                paramMostrarValores="true">                
             </app-seleccionador>
+        </div>
+        <div class="col-sm-4 p-2">
+            <app-seleccionador></app-seleccionador>
+        </div>
+        <div class="col-sm-4 p-2">
+                <app-seleccionador paramNombre="servicio" 
+                                paramEtiquetas="Desayunos,Comidas,Uniformes,Biblioteca,Sala Computo" 
+                                paramValores="D,C,U,B,SC"
+                                paramConBorde="true"
+                                paramMostrarValores="false"
+                                paramTipo ="checkbox"
+                >                
+                </app-seleccionador>
+            </div>
+        </div>
+    <div>
+        <small class="text-muted">Ejemplo de usos de <span class="font-italic font-weight-bold text-danger">directivas estructurales</span>. 
+            En este caso: <br>
+            <ul>
+                <li>
+                    <code class="font-weight-bold">*ngFor</code> (with index), 
+                </li>
+                <li>
+                    <code class="font-weight-bold">*ngIf</code>, 
+                </li>
+                <li>
+                    <code class="font-weight-bold">[ngSwitch]</code> (no estructural),
+                </li>
+                <li>
+                    <code class="font-weight-bold">*ngSwitchCase</code> y 
+                </li>
+                <li>
+                    <code class="font-weight-bold">*ngSwitchDefault</code>. 
+                </li>
+        </ul>
+        Tambi&eacute;n se utiliza <span class="font-italic font-weight-bold">class binding</span> para el dibujo condicional del borde.<br>
+        El componente permite personalizar:
+        <ol>
+            <li>
+                Borde 
+            </li>
+            <li>
+                El despliegue de valores de cada opci&oacute;n
+            </li>
+            <li>
+                Si se desea usar radio botones o botones de tipo chekbox 
+            </li>
+            <li>
+                El nombre del campo
+            </li>
+            <li>
+                Los valores posibles a elegir
+            </li>
+        </ol> 
+        En general, el componente explota el <strong>renderizado condicional</strong> con base en datos residentes en su controlador.
+        </small>
     </div>
-    <div class="col-sm-4 p-2">
-        <app-seleccionador></app-seleccionador>
-    </div>
-    <div class="col-sm-4 p-2">
-            <app-seleccionador paramNombre="servicio" 
-                               paramEtiquetas="Desayunos,Comidas,Uniformes,Biblioteca,Sala Computo" 
-                               paramValores="D,C,U,B,SC"
-                               paramConBorde="true"
-                               paramMostrarValores="false"
-                               paramTipo ="checkbox"
-            >                
-            </app-seleccionador>
+    <hr  class="my-4">
+  </div>
+
+  <div *ngIf="elNgModelYelBindingBidireccionalOn">
+    <div class="row">
+        <h5 class="text-primary">NgModel y Binding bidireccional: Componente
+            <pre class="d-inline">editor-personas</pre>
+        </h5>
+        <div class="offset-sm-3 col-sm-6">
+            <app-editor-personas></app-editor-personas>
         </div>
     </div>
-<div>
-    <small class="text-muted">Ejemplo de usos de <span class="font-italic font-weight-bold text-danger">directivas estructurales</span>. 
-        En este caso: <br>
-        <ul>
-            <li>
-                <code class="font-weight-bold">*ngFor</code> (with index), 
-            </li>
-            <li>
-                <code class="font-weight-bold">*ngIf</code>, 
-            </li>
-            <li>
-                <code class="font-weight-bold">[ngSwitch]</code> (no estructural),
-            </li>
-            <li>
-                <code class="font-weight-bold">*ngSwitchCase</code> y 
-            </li>
-            <li>
-                <code class="font-weight-bold">*ngSwitchDefault</code>. 
-            </li>
-       </ul>
-    Tambi&eacute;n se utiliza <span class="font-italic font-weight-bold">class binding</span> para el dibujo condicional del borde.<br>
-    El componente permite personalizar:
-    <ol>
-        <li>
-            Borde 
-        </li>
-        <li>
-            El despliegue de valores de cada opci&oacute;n
-        </li>
-        <li>
-            Si se desea usar radio botones o botones de tipo chekbox 
-        </li>
-        <li>
-            El nombre del campo
-        </li>
-        <li>
-            Los valores posibles a elegir
-        </li>
-    </ol> 
-    En general, el componente explota el <strong>renderizado condicional</strong> con base en datos residentes en su controlador.
-    </small>
-</div>
-<hr  class="my-4">
-<div class="row">
-    <h5 class="text-primary">NgModel y Binding bidireccional: Componente
-        <pre class="d-inline">editor-personas</pre>
-    </h5>
-    <div class="offset-sm-3 col-sm-6">
-        <app-editor-personas></app-editor-personas>
+    <div class="text-info text-muted mt-3 text-info">
+        <small>Ejemplo del uso de <code class="font-weight-bold">ngModel</code> para
+            <strong class="text-danger">enlace doble de datos</strong> entre el formulario y la clase definida en el
+            controlador del
+            componente.</small>
     </div>
-</div>
-<div class="text-info text-muted mt-3 text-info">
-    <small>Ejemplo del uso de <code class="font-weight-bold">ngModel</code> para
-        <strong class="text-danger">enlace doble de datos</strong> entre el formulario y la clase definida en el
-        controlador del
-        componente.</small>
-</div>
-<hr class="my-4">
-<div class="row mt-5">
-    <h5 class="text-primary">Style Binding y Evento Click: Componente <pre class="d-inline">selec-color</pre> (4 instancias)</h5>
-</div>
-<div class="row mt-4">
-    <div class="col-sm ">
-        <app-selec-color numCajas="10"></app-selec-color>
-    </div>
-    <div class="col-sm ">
-        <app-selec-color numCajas="8"></app-selec-color>
-    </div>
-    <div class="col-sm ">
-        <app-selec-color numCajas="20"></app-selec-color>
-    </div>
-</div>
-<div class="row mt-4">
-    <div class="col-sm ">
-        <app-selec-color></app-selec-color>
-    </div>
-</div>
-<div class="text-info text-muted mt-3 text-info">
-    <small>Ejemplo del uso de: 
-         <ol>
-             <li>
-                    <span class="font-weight-bold font-italic text-danger">Style binding</span>
-             </li>
-             <li>
-                    <span class="font-weight-bold font-italic text-danger">Two-way data binding</span>
-             </li>
-             <li>
-                    <span class="font-weight-bold font-italic text-danger">Manejo del evento</span> <code class="font-weight-bold"> click</code>.
-             </li>
-             <li>
-                    <span class="font-weight-bold font-italic text-danger">
-                    <strong>Invocaci&oacute;n y paso de par&aacute;metros a los m&eacute;todos</strong>
-                    del controlador del componente. </span>
-             </li>
-
-         </ol>
-    </small>
-    </div>
-
     <hr class="my-4">
-    
+  </div>
+
+  <div *ngIf="elStyleBindingYelEventoClickOn">
+    <div class="row mt-5">
+        <h5 class="text-primary">Style Binding y Evento Click: Componente <pre class="d-inline">selec-color</pre> (4 instancias)</h5>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm ">
+            <app-selec-color numCajas="10"></app-selec-color>
+        </div>
+        <div class="col-sm ">
+            <app-selec-color numCajas="8"></app-selec-color>
+        </div>
+        <div class="col-sm ">
+            <app-selec-color numCajas="20"></app-selec-color>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm ">
+            <app-selec-color></app-selec-color>
+        </div>
+    </div>
+    <div class="text-info text-muted mt-3 text-info">
+        <small>Ejemplo del uso de: 
+            <ol>
+                <li>
+                        <span class="font-weight-bold font-italic text-danger">Style binding</span>
+                </li>
+                <li>
+                        <span class="font-weight-bold font-italic text-danger">Two-way data binding</span>
+                </li>
+                <li>
+                        <span class="font-weight-bold font-italic text-danger">Manejo del evento</span> <code class="font-weight-bold"> click</code>.
+                </li>
+                <li>
+                        <span class="font-weight-bold font-italic text-danger">
+                        <strong>Invocaci&oacute;n y paso de par&aacute;metros a los m&eacute;todos</strong>
+                        del controlador del componente. </span>
+                </li>
+
+            </ol>
+        </small>
+    </div>
+    <hr class="my-4">
+  </div>
+
+  <div *ngIf="componentesQueDevuelvenValoresOn">
     <div class="row">
         <h5 class="text-primary">Componentes que devuelven valores
             <pre class="d-inline">selec-alternativa</pre>
@@ -192,8 +203,11 @@
             (el seleccionador).
         </small>
     </div>
-   <hr class="my-4">
-   <div class="row">
+    <hr class="my-4">
+  </div>   
+
+  <div *ngIf="ComponentesQueRecibenHtmlConNgContentOn">
+    <div class="row">
         <h5 class="text-primary">Componentes que reciben html
             <pre class="d-inline">toggler</pre>
         </h5>
@@ -224,7 +238,7 @@
             </app-toggler>
         </div>
     </div>
- 
+    
     <div class="text-info text-muted mt-3 text-info text-justify">
         <small>
             <strong>El componente recibe fragmentos de c&oacute;digo Html</strong> usando etiquetas
@@ -235,8 +249,11 @@
             fragmentos recibidos (<strong>diferenciados por</strong> el uso de atributos "fake"). <br>
         </small>
     </div>
-    
+        
     <hr class="my-4">
+  </div>
+
+  <div *ngIf="InyeccionDeElementosDOMdeVistaEnClaseOn">
     <div class="row">
         <h5 class="text-primary">Inyección de elementos DOM de la vista, en el controlador: Componente
             <pre class="d-inline">tarjeta</pre>
@@ -302,7 +319,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="InyeccionDependencias2Instances1serviceOn">
     <div class="row" id="InDep01">
         <h5 class="text-primary">Inyecci&oacute;n de Dependencias: Componente 
             <pre class="d-inline">consulta-personas</pre> (dos instancias) y servicio 
@@ -347,6 +366,9 @@
         </small>
     </div>
     <hr class="my-4">
+  </div>
+
+  <div *ngIf="JerarquiaDeInyeccionOn">
     <div class="row"  id="InDep02">
         <h5 class="text-primary">Jerarqu&iacute;a de Inyecci&oacute;n: Componentes 
             <pre class="d-inline">contenedor</pre> y 
@@ -392,8 +414,10 @@
             </ul>
         </small>
     </div>
-
     <hr class="my-4">
+  </div>
+
+  <div *ngIf="ServicioComoMotorDeCoreografiaOn">   
     <div class="row"  id="InDep03">
         <h5 class="text-primary">Servicio como Motor de Coreografía: Componentes 
             <pre class="d-inline">contenedor</pre>,  
@@ -427,7 +451,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="HerenciaDeServiciosYuseExistingOn">
     <div class="row"  id="InDep04">
         <h5 class="text-primary">Herencia de Servicios y useExisting: Componente 
             <pre class="d-inline">drop-down</pre>,  
@@ -464,7 +490,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="PersonalizandoBusquedaDeInyectoresOn">
     <div class="row"  id="InDep04">
         <h5 class="text-primary">Personalizando la B&uacute;squeda de Inyectores: Componentes 
             <pre class="d-inline">drop-down</pre>,  
@@ -529,7 +557,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="InyectoresPersonalizadosOn">
     <div class="row"  id="InDep04">
         <h5 class="text-primary">Inyectores personalizados: Componente 
             <pre class="d-inline">titulo</pre>  
@@ -560,7 +590,9 @@
     </div>
   
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="IntroduccionAlosObservablesYelRxJsOn">
     <div class="row">
         <h5 class="text-primary">Introducci&oacute;n a Observables y RxJs: Componente 
             <pre class="d-inline">test-rxjs01</pre> 
@@ -589,7 +621,9 @@
     </div>
  
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="FuncBasicasCrearObservablesAdaptadoresOn">
     <div class="row">
         <h5 class="text-primary">Funciones b&aacute;sicas de Creaci&oacute;n de Observables (Adaptadores): Componente 
             <pre class="d-inline">test-rxjs02</pre> 
@@ -626,7 +660,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="FuncionBindCallbackOn">
     <div class="row">
         <h5 class="text-primary">Funci&oacute;n <pre class="d-inline">bindCallback</pre> : Componente 
             <pre class="d-inline">test-rxjs03</pre> 
@@ -669,7 +705,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="PipelineEnRxJsOn">
     <div class="row">
         <h5 class="text-primary">Pipeline en RxJs : Componente
             <pre class="d-inline">test-rxjs04</pre> 
@@ -713,7 +751,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="MasFuncionesCreadorasEnRxJsOn">
     <div class="row">
         <h5 class="text-primary">M&aacute;s Funciones creadoras : Componente
             <pre class="d-inline">test-rxjs05</pre> 
@@ -727,7 +767,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="OperadoresFiltradoFilteryMapOn">
     <div class="row">
         <h5 class="text-primary">Operadores de filtrado : Componente
             <pre class="d-inline">test-rxjs06</pre> 
@@ -740,7 +782,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="OperadoresFiltradoPorPosicionOn">
     <div class="row">
         <h5 class="text-primary">Operadores de filtrado por posici&oacute;n : Componente
             <pre class="d-inline">test-rxjs07</pre> 
@@ -753,7 +797,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="OperFiltrosOptimizadoDebounceTimeOn">
     <div class="row">
         <h5 class="text-primary">Operadores de filtrado para optimizaci&oacute;n : Componente
             <pre class="d-inline">test-rxjs08</pre> 
@@ -766,7 +812,9 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="OperFiltrosOptimizadoDebounceThrottleOn">
     <div class="row">
         <h5 class="text-primary">Operadores de filtrado para optimizaci&oacute;n : Componente
             <pre class="d-inline">test-rxjs09</pre> 
@@ -779,31 +827,36 @@
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="OperAgrupacionReduceScanMaxCountOn">
     <div class="row">
         <h5 class="text-primary">Operadores de agrupaci&oacute;n : Componente
             <pre class="d-inline">test-rxjs10</pre> 
         </h5>
     </div>
-    <div [hidden]="!testReduceScanTakeUntil" class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-4">
         <div class="col-sm-12">
             <app-test-rxjs10></app-test-rxjs10>
         </div>
     </div>
 
     <hr class="my-4">
+  </div>
 
+  <div *ngIf="OperRecoleccionEnArrBufferTimeYcountOn">
     <div class="row">
-        <h5 class="text-primary">Operadores de agrupaci&oacute;n : Componente
+        <h5 class="text-primary">Operadores de recolecci&oacute;n en arreglos: Componente
             <pre class="d-inline">test-rxjs11</pre> 
         </h5>
     </div>
-    <div [hidden]="!testReduceScanTakeUntil" class="row justify-content-center mt-4">
+    <div  class="row justify-content-center mt-4">
         <div class="col-sm-12">
             <app-test-rxjs11></app-test-rxjs11>
         </div>
     </div>
 
     <hr class="my-4">
+  </div>
 
 </div>

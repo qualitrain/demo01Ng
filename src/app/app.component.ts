@@ -11,6 +11,33 @@ export class AppComponent {
 
   title = 'Demo de funcionalidades de Angular 15+ [demo01Ng]';
 
+  directivasEstructuralesInterpolacionOn   :boolean=false;
+  parametrosEntradaYclassBindingOn         :boolean=false;
+  elNgModelYelBindingBidireccionalOn       :boolean=false;
+  elStyleBindingYelEventoClickOn           :boolean=false;
+  componentesQueDevuelvenValoresOn         :boolean=false;
+  ComponentesQueRecibenHtmlConNgContentOn  :boolean=false;
+  InyeccionDeElementosDOMdeVistaEnClaseOn  :boolean=false;
+
+  InyeccionDependencias2Instances1serviceOn:boolean=false;
+  JerarquiaDeInyeccionOn                   :boolean=false;
+  ServicioComoMotorDeCoreografiaOn         :boolean=false;
+  HerenciaDeServiciosYuseExistingOn        :boolean=false;
+  PersonalizandoBusquedaDeInyectoresOn     :boolean=false;
+  InyectoresPersonalizadosOn               :boolean=false;
+
+  IntroduccionAlosObservablesYelRxJsOn     :boolean=false;
+  FuncBasicasCrearObservablesAdaptadoresOn :boolean=false;
+  FuncionBindCallbackOn                    :boolean=false;
+  PipelineEnRxJsOn                         :boolean=false;
+  MasFuncionesCreadorasEnRxJsOn            :boolean=false;
+  OperadoresFiltradoFilteryMapOn           :boolean=false;
+  OperadoresFiltradoPorPosicionOn          :boolean=false;
+  OperFiltrosOptimizadoDebounceTimeOn      :boolean=false;
+  OperFiltrosOptimizadoDebounceThrottleOn  :boolean=false;
+  OperAgrupacionReduceScanMaxCountOn       :boolean=false;
+  OperRecoleccionEnArrBufferTimeYcountOn   :boolean=true;
+
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
   valorPelicula:string="";
