@@ -37,7 +37,8 @@ export class AppComponent {
   OperFiltrosOptimizadoDebounceThrottleOn  :boolean=false;
   OperAgrupacionReduceScanMaxCountOn       :boolean=false;
   OperRecoleccionEnArrBufferTimeYcountOn   :boolean=false;
-  OperCombinaConcatMergeSwitchExhaustMapOn :boolean=true;    
+  OperCombinaConcatMergeSwitchExhaustMapOn :boolean=false;
+  CreaObsQCombinaEnArrMasObsCombineLatestOn:boolean=false;    
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;

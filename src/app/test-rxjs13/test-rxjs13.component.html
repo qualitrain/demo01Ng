@@ -1,0 +1,58 @@
+<div class="row p-2 mx-1 mb-3">
+    <div class="col text-primary font-weight-bold">
+        Demo de la <i>funci&oacute;n RxJS </i> <code>combineLatest</code>.
+    </div>
+</div>
+<div class="row px-4 my-2 justify-content-around"  >
+    <div class="col-3 col-md-2 col-xl-1 p-2 ">
+        <div class="form-group">
+          <label for="milisCaja1">milis 1</label>
+          <input type="number" class="form-control text-center" [value]="milisColor1" 
+                id="milisCaja1" min="100" max="20000" step="100" #milis1>
+        </div>
+    </div>
+    <div class="col-3 col-md-2 col-xl-1 p-2 ">
+        <div class="form-group">
+          <label for="milisCaja2">milis 2</label>
+          <input type="number" class="form-control text-center" [value]="milisColor2" 
+                id="milisCaja2" min="100" max="20000" step="100" #milis2>
+        </div>
+    </div>
+    <div class="col-3 col-md-2 col-xl-1 p-2 ">
+        <div class="form-group">
+          <label for="milisCaja3">milis 3</label>
+          <input type="number" class="form-control text-center" [value]="milisColor3" 
+                id="milisCaja3" min="100" max="20000" step="100" #milis3>
+        </div>
+    </div>
+</div>
+<div class="row px-4 mb-3 mt-n2 justify-content-around"  >
+    <div class="col-3 col-md-2  p-2 ">
+        <button type="button" class="btn btn-primary btn-block" 
+         (click)="demo(milis1.value, milis2.value, milis3.value)">Probar</button>
+    </div>
+</div>
+<div class="row px-4 mb-1 justify-content-around"  *ngFor="let linCajasI of lineaCajas">
+    <div class="col-3 p-1 text-center caja rounded-pill text-white font-weight-bold" 
+    [style.backgroundColor]=linCajasI.caja1.hsl>{{linCajasI.caja1.n}}
+    </div>
+    <div class="col-3 p-1 text-center caja rounded-pill text-white font-weight-bold" 
+    [style.backgroundColor]=linCajasI.caja2.hsl>{{linCajasI.caja2.n}}
+    </div>
+    <div class="col-3 p-1 text-center caja rounded-pill text-white font-weight-bold" 
+    [style.backgroundColor]=linCajasI.caja3.hsl>{{linCajasI.caja3.n}}
+    </div>
+</div>
+<div class="row p-2 mx-1 mt-3 table-info rounded-lg">
+    <div class="font-weight-bold col-12 mb-2">
+        Instrucciones:
+    </div>
+    <div class="text-muted col-12">
+        El programa combinar&aacute; 3 listas de colores. Cada una es un observable
+        que devuelve un color distinto cada determinados milisegundos.
+        Configure los milisegundos de pausa a usar entre cada color para cada una de las listas.<br>
+        Las listas 1 y 2 recuperan el mismo n&uacute;mero fijo de colores. La lista 3
+        recupera una cantidad mayor de colores. (Se agota mucho despu&eacute;s).
+    </div>
+</div>
+
