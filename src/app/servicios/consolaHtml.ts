@@ -80,9 +80,17 @@ export class ConsolaHtml{
             this.elemHost.appendChild(this.crearElemResaltado(cad));
         else
             this.elemHost.appendChild(this.crearElemResaltado(cad,color));
-
     }
-    crearElemResaltado(cadResaltada:string, color:string|undefined=undefined):HTMLElement{
+    mostrarEnColorLn(cad:string, color:string){
+        if(!this.elemHost){
+            console.error("Elemento Html host no existe");
+            throw new Error("Elemento Html host no existe");
+        }
+        cad = cad.replaceAll("\t","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+        this.elemHost.appendChild(this.crearElemColoreado(cad,color));
+        this.elemHost.appendChild(document.createElement("BR"));
+    }
+    private crearElemResaltado(cadResaltada:string, color:string|undefined=undefined):HTMLElement{
         let elemResaltado:HTMLElement = document.createElement("STRONG");
         if(color === undefined)
             elemResaltado.style.color=this.colorResaltado;
@@ -91,6 +99,16 @@ export class ConsolaHtml{
 
         elemResaltado.innerText=cadResaltada;
         return elemResaltado;
+    }
+    private crearElemColoreado(cadColoreada:string, color:string|undefined=undefined):HTMLElement{
+        let elemColoreado:HTMLElement = document.createElement("SPAN");
+        if(color === undefined)
+            elemColoreado.style.color=this.colorResaltado;
+        else
+            elemColoreado.style.color=color;
+
+        elemColoreado.innerText=cadColoreada;
+        return elemColoreado;
     }
        
 }

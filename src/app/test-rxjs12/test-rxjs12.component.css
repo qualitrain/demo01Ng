@@ -1,0 +1,10 @@
+.consolaRxjs12{
+    height: 10cm;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    line-height: .85rem;
+    font-size: .8rem;
+}
+.consolaRxjs12:hover {
+    overflow: scroll;
+}
