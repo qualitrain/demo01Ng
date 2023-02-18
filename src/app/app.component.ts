@@ -41,7 +41,7 @@ export class AppComponent {
   OperCombinaConcatMergeSwitchExhaustMapOn :boolean=false; //test-rxjs12
   OperCombinaSwitchMapVsSwitchAllOn        :boolean=false; //test-rxjs12-b
   CreaObsQCombinaEnArrMasObsCombineLatestOn:boolean=false; //test-rxjs13
-  IntegracionDeObservablesOn               :boolean=false; //test-rxjs14
+  IntegracionDeObservablesOn               :boolean=true; //test-rxjs14
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;

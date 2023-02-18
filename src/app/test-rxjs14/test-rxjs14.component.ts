@@ -19,7 +19,8 @@ export class TestRxjs14Component implements OnInit, AfterViewInit{
     this.btnMedir = document.getElementById(this.idBtnMedir) as HTMLButtonElement;
 
     const mouseAbajoBtnMedir$ = fromEvent(this.btnMedir,"mousedown").pipe(
-      tap(()=>this.diplaySpanAviso = "inline"),
+      tap(()=> { this.diplaySpanAviso = "inline";
+                 this.segundos = 0 }),
       concatMap( evt => interval(10).pipe(  //concatena un interval a cada mousedown
                                       map(n => n*10)) // devuelve los milisegundos transcurridos
       ), 
@@ -34,10 +35,12 @@ export class TestRxjs14Component implements OnInit, AfterViewInit{
             concatMap(() => mouseAbajoBtnMedir$)
     ).subscribe(milis => this.segundos = milis/1000);
 
+    /*
     fromEvent(this.btnMedir,"mouseup") // Cuando se suelte el botón debe desaparecer el contador de la pantalla y re-inicializarse
        .subscribe( ()=> {
                           this.diplaySpanAviso = "none";
                           this.segundos = 0;
                         });
+                        */
   }
 }
