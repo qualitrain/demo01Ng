@@ -1,0 +1,16 @@
+<div>
+    <h5 class="mt-3">Integraci&oacute;n de observables con <code>concatMap</code> y 
+        <code>takeUntil</code> </h5>
+    <div class="mt-3 row">
+        <div class="col-3">
+            <button class="btn btn-primary" id="{{idBtnMedir}}">Oprimir</button> <br>                   
+            <span class="text-info">No suelte de inmediato</span>
+        </div>
+        <div class="col-9">
+            <span class="text-success" id="spanAviso" [style.display]="diplaySpanAviso">
+                Se puls&oacute; el bot&oacute;n durante 
+                <span class="font-weight-bold text-danger" id="spanSegundos">{{segundos}}</span> segundos
+            </span>
+        </div>
+    </div>
+</div>

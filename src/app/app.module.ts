@@ -33,6 +33,7 @@ import { TestRxjs11Component } from './test-rxjs11/test-rxjs11.component';
 import { TestRxjs12Component } from './test-rxjs12/test-rxjs12.component';
 import { TestRxjs13Component } from './test-rxjs13/test-rxjs13.component';
 import { TestRxjs12BComponent } from './test-rxjs12-b/test-rxjs12-b.component';
+import { TestRxjs14Component } from './test-rxjs14/test-rxjs14.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { TestRxjs12BComponent } from './test-rxjs12-b/test-rxjs12-b.component';
     TestRxjs11Component,
     TestRxjs12Component,
     TestRxjs13Component,
-    TestRxjs12BComponent
+    TestRxjs12BComponent,
+    TestRxjs14Component
   ],
   imports: [
     BrowserModule,
