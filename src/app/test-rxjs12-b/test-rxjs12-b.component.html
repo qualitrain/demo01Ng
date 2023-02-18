@@ -1,24 +1,37 @@
 <div>
-    <div class="row p-2 m-1">
-        <div class="col text-primary font-weight-bold">
-            Demo del <i>operador RxJS </i> <code>switchMap</code>.  
+    <div class="row p-2 m-2  border-bottom border-primary">
+        <div class="col text-primary font-weight-bold text-center ">
+        Operador <code>switchMap</code> VS operador <code>switchAll</code>.  
         </div>
     </div>
+    <div class="row p-2 justify-content-center">
+        <div class="form-check form-check-inline col-sm-2 table-secondary pl-3">
+            <input class="form-check-input col-1" type="radio" name="operador" id="{{idRadioSwitchMap}}" value="switchMap" checked>
+            <label class="form-check-label col-11" for="{{idRadioSwitchMap}}">switchMap</label>
+        </div>
+        <div class="form-check form-check-inline col-sm-2 table-secondary pl-3">
+            <input class="form-check-input col-1" type="radio" name="operador" id="{{idRadioSwitchAll}}" value="switchAll">
+            <label class="form-check-label col-11" for="{{idRadioSwitchAll}}">switchAll</label>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-primary col-12" (click)="iniciarTest()">Iniciar</button>
+        </div>
+    </div>    
     <div class="row p-2 m-1">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center my-4">
             <div class="text-white  display-3 bg-danger p-3 rounded-pill 
                         d-inline-block text-center elipse" id="{{idElipseSM}}">
                 {{ nClicksEnElipse }}
             </div>
         </div>
-
     </div>
+
     <div class="row p-2 mx-1 mt-3 table-info rounded-lg">
         <div class="font-weight-bold col-12 mb-2">
             Instrucciones:
         </div>
         <div class="text-muted col-12">
-            Haga click en la elipse. Espere un momento y vuelva a hacer click en la elpise mencionada.
+            Haga click en la elipse. Espere un momento y vuelva a hacer click en la elipse mencionada.
         </div>
     </div>
 

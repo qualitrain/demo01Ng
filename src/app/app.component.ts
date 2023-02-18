@@ -26,20 +26,21 @@ export class AppComponent {
   PersonalizandoBusquedaDeInyectoresOn     :boolean=false;
   InyectoresPersonalizadosOn               :boolean=false;
 
-  IntroduccionAlosObservablesYelRxJsOn     :boolean=false;
-  FuncBasicasCrearObservablesAdaptadoresOn :boolean=false;
-  FuncionBindCallbackOn                    :boolean=false;
-  PipelineEnRxJsOn                         :boolean=false;
-  MasFuncionesCreadorasEnRxJsOn            :boolean=false;
-  OperadoresFiltradoFilteryMapOn           :boolean=false;
-  OperadoresFiltradoPorPosicionOn          :boolean=false;
-  OperFiltrosOptimizadoDebounceTimeOn      :boolean=false;
-  OperFiltrosOptimizadoDebounceThrottleOn  :boolean=false;
-  OperAgrupacionReduceScanMaxCountOn       :boolean=false;
-  OperRecoleccionEnArrBufferTimeYcountOn   :boolean=false;
-  OperCombinaConcatMergeSwitchExhaustMapOn :boolean=false;
-  OperCombinaSwitchMapOn                   :boolean=false;
-  CreaObsQCombinaEnArrMasObsCombineLatestOn:boolean=false;    
+  IntroduccionAlosObservablesYelRxJsOn     :boolean=false; //test-rxjs01
+  FuncBasicasCrearObservablesAdaptadoresOn :boolean=false;  //test-rxjs02
+  FuncionBindCallbackOn                    :boolean=false; //test-rxjs03
+  PipelineEnRxJsOn                         :boolean=false; // test-rxjs04
+  MasFuncionesCreadorasEnRxJsOn            :boolean=false; // test-rxjs05
+  OperadoresFiltradoFilteryMapOn           :boolean=false; //test-rxjs06
+  OperadoresFiltradoPorPosicionOn          :boolean=false;  //test-rxjs07
+  OperFiltrosOptimizadoDebounceTimeOn      :boolean=false; //test-rxjs08
+  OperFiltrosOptimizadoDebounceThrottleOn  :boolean=false; //test-rxjs09
+  OperAgrupacionReduceScanMaxCountOn       :boolean=false; //test-rxjs10
+  OperRecoleccionEnArrBufferTimeYcountOn   :boolean=false; //test-rxjs11
+  OperCombinaConcatMergeSwitchExhaustMapOn :boolean=false; //test-rxjs12
+
+  OperCombinaSwitchMapVsSwitchAllOn        :boolean=true; //test-rxjs12-b
+  CreaObsQCombinaEnArrMasObsCombineLatestOn:boolean=false; //test-rxjs13   
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
