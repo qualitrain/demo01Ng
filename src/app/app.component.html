@@ -919,7 +919,7 @@
     <hr class="my-4">
   </div>
 
-  <div>
+  <div *ngIf="EjemplosAjaxOn">
     <div class="row">
         <h5 class="text-primary">Ejemplo de Ajax: Componente
             <pre class="d-inline">test-rxjs15-ajax</pre> 
@@ -934,4 +934,18 @@
     <hr class="my-4">
   </div>
 
+  <div *ngIf="EjemploMultiCastingYusoDeSubjectOn">
+    <div class="row">
+        <h5 class="text-primary">Ejemplo Multicasting con Subject: Componente
+            <pre class="d-inline">test-rxjs16-subject</pre> 
+        </h5>
+    </div>
+    <div  class="row justify-content-center mt-4">
+        <div class="col-sm-12">
+            <app-test-rxjs16-subject></app-test-rxjs16-subject>
+        </div>
+    </div>
+
+    <hr class="my-4">
+  </div>
 </div>

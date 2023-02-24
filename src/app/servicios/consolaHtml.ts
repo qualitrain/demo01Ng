@@ -82,13 +82,17 @@ export class ConsolaHtml{
             this.elemHost.appendChild(this.crearElemResaltado(cad,color));
     }
     mostrarEnColorLn(cad:string, color:string){
+        this.mostrarEnColor(cad,color);
+        if(this.elemHost)
+            this.elemHost.appendChild(document.createElement("BR"));
+    }
+    mostrarEnColor(cad:string, color:string){
         if(!this.elemHost){
             console.error("Elemento Html host no existe");
             throw new Error("Elemento Html host no existe");
         }
         cad = cad.replaceAll("\t","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
         this.elemHost.appendChild(this.crearElemColoreado(cad,color));
-        this.elemHost.appendChild(document.createElement("BR"));
     }
     private crearElemResaltado(cadResaltada:string, color:string|undefined=undefined):HTMLElement{
         let elemResaltado:HTMLElement = document.createElement("STRONG");

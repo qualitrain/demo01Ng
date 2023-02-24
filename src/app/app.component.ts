@@ -42,6 +42,9 @@ export class AppComponent {
   OperCombinaSwitchMapVsSwitchAllOn        :boolean=false; //test-rxjs12-b
   CreaObsQCombinaEnArrMasObsCombineLatestOn:boolean=false; //test-rxjs13
   IntegracionDeObservablesOn               :boolean=false; //test-rxjs14
+  EjemplosAjaxOn                           :boolean=false; //test-rxjs15-ajax
+
+  EjemploMultiCastingYusoDeSubjectOn       :boolean=true; //test-rxjs16-subject
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
