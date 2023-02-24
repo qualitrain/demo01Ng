@@ -44,7 +44,7 @@ export class AppComponent {
   IntegracionDeObservablesOn               :boolean=false; //test-rxjs14
   EjemplosAjaxOn                           :boolean=false; //test-rxjs15-ajax
 
-  EjemploMultiCastingYusoDeSubjectOn       :boolean=true; //test-rxjs16-subject
+  EjemploMultiCastingYusoDeSubjectOn       :boolean=false; //test-rxjs16-subject
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
