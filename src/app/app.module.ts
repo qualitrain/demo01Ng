@@ -37,6 +37,7 @@ import { TestRxjs14Component } from './test-rxjs14/test-rxjs14.component';
 import { TestRxjs15AjaxComponent } from './test-rxjs15-ajax/test-rxjs15-ajax.component';
 import { TestRxjs16SubjectComponent } from './test-rxjs16-subject/test-rxjs16-subject.component';
 import { TestRxjs17SchedulerComponent } from './test-rxjs17-scheduler/test-rxjs17-scheduler.component';
+import { DemoRxjsModule } from './demo-rxjs/demo-rxjs.module';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { TestRxjs17SchedulerComponent } from './test-rxjs17-scheduler/test-rxjs1
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    DemoRxjsModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...
   // providers: [],
