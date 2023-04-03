@@ -949,7 +949,7 @@
     <hr class="my-4">
   </div>
 
-  <div>
+  <div *ngIf="EjemploSchedulersOn">
     <div class="row">
         <h5 class="text-primary">Ejemplo Schedulers: Componente
             <pre class="d-inline">test-rxjs17-scheduler</pre> 
@@ -958,6 +958,29 @@
     <div  class="row justify-content-center mt-4">
         <div class="col-sm-12">
             <app-test-rxjs17-scheduler></app-test-rxjs17-scheduler>
+        </div>
+    </div>
+
+    <hr class="my-4">
+  </div>
+  <div>
+    <div class="row">
+        <h5 class="text-primary">Ejemplo Modulo Funcional + Ruteo: 
+            <pre class="d-inline">router-outlet</pre> 
+        </h5>
+    </div>
+    <div class="row">
+        <nav>
+            <ul>
+              <li><a routerLink="/">Inicio:Ra&iacute;z</a></li>
+              <li><a routerLink="/testRxjs">M&oacute;dulo RxJs</a></li>
+              <li><a routerLink="/pendiente">Ruta no definida a&uacute;n</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div  class="row justify-content-center mt-4">
+        <div class="col-sm-12">
+            <router-outlet></router-outlet>
         </div>
     </div>
 

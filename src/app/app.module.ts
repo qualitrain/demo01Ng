@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { ListaB4Component } from './lista-b4/lista-b4.component';
 import { SeleccionadorComponent } from './seleccionador/seleccionador.component';
@@ -79,7 +81,8 @@ import { DemoRxjsModule } from './demo-rxjs/demo-rxjs.module';
   imports: [
     BrowserModule,
     FormsModule,
-    DemoRxjsModule
+    DemoRxjsModule,
+    AppRoutingModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...
   // providers: [],

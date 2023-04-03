@@ -45,6 +45,7 @@ export class AppComponent {
   EjemplosAjaxOn                           :boolean=false; //test-rxjs15-ajax
 
   EjemploMultiCastingYusoDeSubjectOn       :boolean=false; //test-rxjs16-subject
+  EjemploSchedulersOn                      :boolean=false; //test-rxjs17-scheduler
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
