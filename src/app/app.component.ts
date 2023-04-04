@@ -37,7 +37,7 @@ export class AppComponent {
   OperadoresFiltradoPorPosicionOn          :boolean=false;  //test-rxjs07
   OperFiltrosOptimizadoDebounceTimeOn      :boolean=false; //test-rxjs08
   OperFiltrosOptimizadoDebounceThrottleOn  :boolean=false; //test-rxjs09
-  
+
   OperAgrupacionReduceScanMaxCountOn       :boolean=false; //test-rxjs10
   OperRecoleccionEnArrBufferTimeYcountOn   :boolean=false; //test-rxjs11
 
@@ -45,6 +45,7 @@ export class AppComponent {
   OperCombinaSwitchMapVsSwitchAllOn        :boolean=false; //test-rxjs12-b
   CreaObsQCombinaEnArrMasObsCombineLatestOn:boolean=false; //test-rxjs13
   IntegracionDeObservablesOn               :boolean=false; //test-rxjs14
+  
   EjemplosAjaxOn                           :boolean=false; //test-rxjs15-ajax
 
   EjemploMultiCastingYusoDeSubjectOn       :boolean=false; //test-rxjs16-subject

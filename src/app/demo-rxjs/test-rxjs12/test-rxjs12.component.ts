@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { concatMap, exhaustMap, fromEvent, interval, map, mergeMap, Observable, of, startWith, switchMap, take, tap } from 'rxjs';
-import { ConsolaHtml } from '../servicios/consolaHtml';
+import { ConsolaHtml } from '../../servicios/consolaHtml';
 
 @Component({
   selector: 'app-test-rxjs12',

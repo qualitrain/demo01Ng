@@ -1,6 +1,6 @@
 import { Component,AfterViewInit } from '@angular/core';
 import { fromEvent, interval, map, of, Subject, switchMap, take, tap } from 'rxjs';
-import { ConsolaHtml } from '../servicios/consolaHtml';
+import { ConsolaHtml } from '../../servicios/consolaHtml';
 
 @Component({
   selector: 'app-test-rxjs16-subject',
