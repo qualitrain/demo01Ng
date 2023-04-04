@@ -24,8 +24,8 @@ import { TestRxjs01Component } from './demo-rxjs/test-rxjs01/test-rxjs01.compone
 import { TestRxjs02Component } from './test-rxjs02/test-rxjs02.component';
 import { TestRxjs03Component } from './test-rxjs03/test-rxjs03.component';
 import { TestRxjs04Component } from './test-rxjs04/test-rxjs04.component';
-import { TestRxjs05Component } from './test-rxjs05/test-rxjs05.component';
-import { TestRxjs06Component } from './test-rxjs06/test-rxjs06.component';
+import { TestRxjs05Component } from './demo-rxjs/test-rxjs05/test-rxjs05.component';
+import { TestRxjs06Component } from './demo-rxjs/test-rxjs06/test-rxjs06.component';
 import { TestRxjs07Component } from './test-rxjs07/test-rxjs07.component';
 import { TestRxjs08Component } from './test-rxjs08/test-rxjs08.component'
 import { Canvas01Component } from './canvas01/canvas01.component';

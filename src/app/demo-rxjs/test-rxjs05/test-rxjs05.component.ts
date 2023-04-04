@@ -1,6 +1,6 @@
 import { Component, AfterViewChecked} from '@angular/core';
 import { concat, from, iif, interval, map, merge, of, take, takeUntil, tap, timer, toArray } from 'rxjs';
-import { ConsolaHtml } from '../servicios/consolaHtml'
+import { ConsolaHtml } from '../../servicios/consolaHtml'
 
 @Component({
   selector: 'app-test-rxjs05',

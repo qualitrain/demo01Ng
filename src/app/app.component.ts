@@ -30,11 +30,14 @@ export class AppComponent {
   FuncBasicasCrearObservablesAdaptadoresOn :boolean=false;  //test-rxjs02
   FuncionBindCallbackOn                    :boolean=false; //test-rxjs03
   PipelineEnRxJsOn                         :boolean=false; // test-rxjs04
+
   MasFuncionesCreadorasEnRxJsOn            :boolean=false; // test-rxjs05
+
   OperadoresFiltradoFilteryMapOn           :boolean=false; //test-rxjs06
   OperadoresFiltradoPorPosicionOn          :boolean=false;  //test-rxjs07
   OperFiltrosOptimizadoDebounceTimeOn      :boolean=false; //test-rxjs08
   OperFiltrosOptimizadoDebounceThrottleOn  :boolean=false; //test-rxjs09
+  
   OperAgrupacionReduceScanMaxCountOn       :boolean=false; //test-rxjs10
   OperRecoleccionEnArrBufferTimeYcountOn   :boolean=false; //test-rxjs11
 
