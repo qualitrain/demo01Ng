@@ -1,3 +1,29 @@
-<div class="bg-primary text-white rounded text-center p-2">
-    principal works!
+<h5 class="table-primary rounded text-secondary text-center py-1 mb-3">Demo RxJs</h5>
+<div>
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="opcion[0]" (click)="activarOpcion(0)" routerLink="./basicos">B&aacute;sicos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="opcion[1]" (click)="activarOpcion(1)" routerLink="./creacion">Oper. Creaci&oacute;n</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="opcion[2]" (click)="activarOpcion(2)" routerLink="./filtros">Filtrado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.active]="opcion[3]" (click)="activarOpcion(3)" routerLink="./proc">Procesado</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.active]="opcion[4]" (click)="activarOpcion(4)" routerLink="./integracion">Integraci&oacute;n</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.active]="opcion[5]" (click)="activarOpcion(5)" routerLink="./ajax">Ajax</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [class.active]="opcion[6]" (click)="activarOpcion(6)" routerLink="./avanzados">Avanzados</a>
+        </li>
+    </ul>
+</div>
+<div class="mt-2">
+    <router-outlet></router-outlet>
 </div>

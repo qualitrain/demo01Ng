@@ -20,7 +20,7 @@ import { NotificadorBajaComponent } from './notificador-baja/notificador-baja.co
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { CajaDemoHostComponent } from './caja-demo-host/caja-demo-host.component';
 import { TituloComponent } from './titulo/titulo.component';
-import { TestRxjs01Component } from './test-rxjs01/test-rxjs01.component';
+import { TestRxjs01Component } from './demo-rxjs/test-rxjs01/test-rxjs01.component';
 import { TestRxjs02Component } from './test-rxjs02/test-rxjs02.component';
 import { TestRxjs03Component } from './test-rxjs03/test-rxjs03.component';
 import { TestRxjs04Component } from './test-rxjs04/test-rxjs04.component';
