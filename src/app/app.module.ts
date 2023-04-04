@@ -40,6 +40,7 @@ import { TestRxjs15AjaxComponent } from './test-rxjs15-ajax/test-rxjs15-ajax.com
 import { TestRxjs16SubjectComponent } from './test-rxjs16-subject/test-rxjs16-subject.component';
 import { TestRxjs17SchedulerComponent } from './test-rxjs17-scheduler/test-rxjs17-scheduler.component';
 import { DemoRxjsModule } from './demo-rxjs/demo-rxjs.module';
+import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { DemoRxjsModule } from './demo-rxjs/demo-rxjs.module';
     TestRxjs14Component,
     TestRxjs15AjaxComponent,
     TestRxjs16SubjectComponent,
-    TestRxjs17SchedulerComponent
+    TestRxjs17SchedulerComponent,
+    PagNoExisteComponent
   ],
   imports: [
     BrowserModule,
