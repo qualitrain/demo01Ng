@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './principal/principal.component';
 
 const routes: Routes = [
-  { path:'testRxjs', component:PrincipalComponent}
+  { path:'testRxjs', title:'demo RxJs y observables', component:PrincipalComponent}
 
 ];
 

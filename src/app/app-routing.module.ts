@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
 import { SelecColorComponent } from './selec-color/selec-color.component';
 const routes: Routes = [
-   { path: '', component: SelecColorComponent },
+   { path: '', title:'raiz App demo Angular', component: SelecColorComponent },
    { path:'**',component: PagNoExisteComponent}
   ];
   @NgModule({
