@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="card mt-1 col-sm-6 bg-light" *ngFor="let componenteI of listaComponentes">
+        <div class="card-body" >
+            <h5 class="card-title">{{componenteI.titulo}}</h5>
+            <p class="card-text">{{componenteI.descripcion}}</p>
+            <div class="row justify-content-around">
+                <a class="btn btn-info col-sm-2" routerLink="../{{componenteI.demo}}">Probar</a>
+                <button class="btn btn-success col-sm-2">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>

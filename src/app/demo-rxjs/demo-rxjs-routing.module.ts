@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListaDemosBasicosComponent } from './lista-demos-basicos/lista-demos-basicos.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { TestRxjs01Component } from './test-rxjs01/test-rxjs01.component';
+import { TestRxjs02Component } from './test-rxjs02/test-rxjs02.component';
+import { TestRxjs03Component } from './test-rxjs03/test-rxjs03.component';
+import { TestRxjs04Component } from './test-rxjs04/test-rxjs04.component';
 import { TestRxjs05Component } from './test-rxjs05/test-rxjs05.component';
 import { TestRxjs06Component } from './test-rxjs06/test-rxjs06.component';
 import { TestRxjs10Component } from './test-rxjs10/test-rxjs10.component';
@@ -15,19 +19,20 @@ const routes: Routes = [
     title:'demo RxJs y observables', 
     component:PrincipalComponent,
     children:[
-      { path:'basicos',component:TestRxjs01Component},
+      { path:'basicos',component:ListaDemosBasicosComponent},
       { path:'creacion', component:TestRxjs05Component},
       { path:'filtros' , component:TestRxjs06Component},
       { path:'acumReduc', component:TestRxjs10Component},
       { path:'combinacion', component:TestRxjs12Component},
       { path:'ajax', component:TestRxjs15AjaxComponent},
-      { path:'avanzados',component:TestRxjs16SubjectComponent}
+      { path:'avanzados',component:TestRxjs16SubjectComponent},
+      { path:'test-rxjs01',component:TestRxjs01Component},
+      { path:'test-rxjs02',component:TestRxjs02Component},
+      { path:'test-rxjs03',component:TestRxjs03Component},
+      { path:'test-rxjs04',component:TestRxjs04Component}
     ]
-  },
-  
-
+  }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
