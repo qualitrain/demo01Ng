@@ -19,17 +19,22 @@ const routes: Routes = [
     title:'demo RxJs y observables', 
     component:PrincipalComponent,
     children:[
-      { path:'basicos',component:ListaDemosBasicosComponent},
+      { 
+        path:'basicos',
+        children:[
+          { path:'', component:ListaDemosBasicosComponent },
+          { path:'test-rxjs01',component:TestRxjs01Component},
+          { path:'test-rxjs02',component:TestRxjs02Component},
+          { path:'test-rxjs03',component:TestRxjs03Component},
+          { path:'test-rxjs04',component:TestRxjs04Component}
+        ]
+      },
       { path:'creacion', component:TestRxjs05Component},
       { path:'filtros' , component:TestRxjs06Component},
       { path:'acumReduc', component:TestRxjs10Component},
       { path:'combinacion', component:TestRxjs12Component},
       { path:'ajax', component:TestRxjs15AjaxComponent},
       { path:'avanzados',component:TestRxjs16SubjectComponent},
-      { path:'test-rxjs01',component:TestRxjs01Component},
-      { path:'test-rxjs02',component:TestRxjs02Component},
-      { path:'test-rxjs03',component:TestRxjs03Component},
-      { path:'test-rxjs04',component:TestRxjs04Component}
     ]
   }
 ];
