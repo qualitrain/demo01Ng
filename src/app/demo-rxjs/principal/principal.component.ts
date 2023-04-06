@@ -15,6 +15,11 @@ export class PrincipalComponent implements AfterViewInit, OnDestroy{
   }
  
   ngAfterViewInit(): void {
+//    this.monitorearRuteo();
+  }
+
+
+  monitorearRuteo(){
     this.ruteador.events.subscribe(evt => {
       console.log("ruteador.events")
       console.log(evt)

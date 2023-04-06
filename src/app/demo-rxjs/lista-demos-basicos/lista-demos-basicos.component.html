@@ -5,7 +5,7 @@
             <p class="card-text">{{componenteI.descripcion}}</p>
             <div class="row justify-content-around">
                 <a class="btn btn-info col-sm-2" routerLink="./{{componenteI.demo}}">Probar</a>
-                <button class="btn btn-success col-sm-2">Editar</button>
+                <a class="btn btn-success col-sm-2" [routerLink]="['./editor',componenteI.demo]" >Editar</a>
             </div>
         </div>
     </div>

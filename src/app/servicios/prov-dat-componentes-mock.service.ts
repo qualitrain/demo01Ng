@@ -12,6 +12,30 @@ export class ProvDatComponentesMockService {
     this.listaComponentes = this.getListaComponentes();
   }
 
+  getComponente(id:string):Observable<IComponente>{
+    let componenteResultado:IComponente|null = null;
+    let componentesLeidos = this.listaComponentes
+                                .filter(compI=>compI.demo === id);
+    if (componentesLeidos.length === 1){
+      componenteResultado = componentesLeidos[0];
+    }
+    let obsLecturaXIDLenta:Observable<IComponente> = new Observable(
+        (obs) => {
+          setTimeout(() => obs.next(componenteResultado!), 800);
+        }
+    )
+    return obsLecturaXIDLenta;
+  }
+
+  updateComponente(compModificado:IComponente){
+    let i = this.listaComponentes
+                .findIndex( (elemI) => elemI.demo === compModificado.demo);
+     if( i !== -1){
+      this.listaComponentes[i].descripcion = compModificado.descripcion;
+      this.listaComponentes[i].titulo = compModificado.titulo;
+    }
+  }
+
   getComponentesTodos():Observable<IComponente[]>{
     let obsLecturaLenta:Observable<IComponente[]> = new Observable(
         (obs) => {

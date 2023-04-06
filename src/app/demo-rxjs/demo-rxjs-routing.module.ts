@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditorComponent } from './editor/editor.component';
 import { ListaDemosBasicosComponent } from './lista-demos-basicos/lista-demos-basicos.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { TestRxjs01Component } from './test-rxjs01/test-rxjs01.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
         path:'basicos',
         children:[
           { path:'', component:ListaDemosBasicosComponent },
+          { path:'editor/:id',component:EditorComponent},
           { path:'test-rxjs01',component:TestRxjs01Component},
           { path:'test-rxjs02',component:TestRxjs02Component},
           { path:'test-rxjs03',component:TestRxjs03Component},

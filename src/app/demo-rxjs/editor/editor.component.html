@@ -1,0 +1,18 @@
+<form class="table-secondary p-2 rounded">
+    <div class="form-group ">
+      <label for="idDemo">Demo</label>
+      <input type="text" class="form-control" id="idDemo" name="demo" [(ngModel)]="objDemo.demo" disabled="disabled">
+    </div>
+    <div class="form-group">
+      <label for="idTitulo">T&iacute;tulo</label>
+      <textarea class="form-control" id="idTitulo" rows="2" name="titulo" [(ngModel)]="objDemo.titulo"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="idDescripcion">Descripci&oacute;n</label>
+        <textarea class="form-control" id="idDescripcion" rows="3" name="descripcion" [(ngModel)]="objDemo.descripcion"></textarea>
+    </div>
+    <div class="row justify-content-around">
+        <button class="btn btn-dark col-sm-2" (click)="actualizarCambios()">Actualizar</button>
+        <button class="btn btn-info col-sm-2" (click)="irAlistaDemos()">Regresar</button>
+    </div>
+</form>
