@@ -1,6 +1,6 @@
 <h5 class="table-primary rounded text-secondary text-center py-1 mb-3">Demo RxJs</h5>
 <div>
-    <ul class="nav nav-pills nav-fill" id="ulMenu">
+  <ul class="nav nav-pills nav-fill" id="ulMenu">
         <li class="nav-item">
           <a class="nav-link"  
              routerLink="./basicos" routerLinkActive="active">B&aacute;sicos</a>
@@ -12,18 +12,27 @@
           <a class="nav-link" routerLinkActive="active" routerLink="./filtros">Filtrado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="./acumReduc">Acum-Reduc</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['acumReduc']">Acum-Reduc</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="./combinacion">Combinaci&oacute;n</a>
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/testRxjs','combinacion']">Combinaci&oacute;n</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="./ajax">Ajax</a>
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['.','ajax']">Ajax</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="./avanzados">Avanzados</a>
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['./avanzados']">Avanzados</a>
         </li>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" 
+            [routerLink]="[{outlets:{outAvisos:['absurdo']}}]" 
+            [queryParams]="{msj:'Prueba navegacion a ruta secundaria del mismo componente, con routerLink',cmd:'No ha sugerencia'}"
+            >?</a>
+      </li>
+  </ul>
+</div>
+<div class="mt-2">
+  <router-outlet name="outAvisos"></router-outlet>
 </div>
 <div class="mt-2">
     <router-outlet></router-outlet>

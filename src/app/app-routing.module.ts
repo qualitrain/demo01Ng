@@ -4,7 +4,8 @@ import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
 import { SelecColorComponent } from './selec-color/selec-color.component';
 const routes: Routes = [
    { path: '', title:'raiz App demo Angular', component: SelecColorComponent },
-   { path:'**',component: PagNoExisteComponent}
+   { path: 'fundamentos', redirectTo: ''},
+   { path: '**', component: PagNoExisteComponent}
   ];
   @NgModule({
     imports: [RouterModule.forRoot(routes

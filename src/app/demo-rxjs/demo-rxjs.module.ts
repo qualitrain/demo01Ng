@@ -16,6 +16,7 @@ import { TestRxjs10Component } from './test-rxjs10/test-rxjs10.component';
 import { TestRxjs12Component } from './test-rxjs12/test-rxjs12.component';
 import { TestRxjs15AjaxComponent } from './test-rxjs15-ajax/test-rxjs15-ajax.component';
 import { TestRxjs16SubjectComponent } from './test-rxjs16-subject/test-rxjs16-subject.component';
+import { AvisadorComponent } from './avisador/avisador.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { TestRxjs16SubjectComponent } from './test-rxjs16-subject/test-rxjs16-su
     TestRxjs15AjaxComponent,
     TestRxjs16SubjectComponent,
     ListaDemosBasicosComponent,
-    EditorComponent
+    EditorComponent,
+    AvisadorComponent
   ],
   imports: [
     CommonModule,

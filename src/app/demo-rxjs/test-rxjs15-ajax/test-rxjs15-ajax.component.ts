@@ -1,7 +1,9 @@
 import { Component, OnInit , AfterViewInit } from '@angular/core';
-import { catchError, concatMap, debounceTime, filter, fromEvent, map, retry, tap, throwError } from 'rxjs';
+import { Router } from '@angular/router';
+import { catchError, concatMap, debounceTime, filter, fromEvent, map, of, retry, tap, throwError } from 'rxjs';
 import { ajax, AjaxError } from "rxjs/ajax";
 
+const COMANDO_ALTA_SERVICIO = "java -jar ServidorAjaxCursoAngular-1.0.0.jar";
 const URI_PERRO =       "http://localhost:8080/ServidorParaAjax/Perrera/Perro?id=";
 const URI_PROPIETARIO = "http://localhost:8080/ServidorParaAjax/Perrera/Persona?id=";
 const URI_DOMICILIO =   "http://localhost:8080/ServidorParaAjax/Perrera/Domicilio?id=";
@@ -57,6 +59,8 @@ export class TestRxjs15AjaxComponent implements OnInit , AfterViewInit{
 
   errorAjax:string="";
 
+  constructor(private ruteador:Router){}
+
   ngOnInit(): void {
     this.idInpId = "inpId" + Math.trunc(Math.random() * 1000);
   }
@@ -67,7 +71,32 @@ export class TestRxjs15AjaxComponent implements OnInit , AfterViewInit{
               map ( (evt:Event) => evt.target as HTMLInputElement),
               map ( elem => elem.value)
            ).subscribe(id => this.getPerroDesdeBackEnd(id))
+    this.validarServicioAjaxArriba();
   }
+  validarServicioAjaxArriba(){
+    console.log('validarServicioAjaxArriba');
+    ajax(URI_PERRO + 99999).pipe(
+       catchError(error => {
+        console.log(error);
+        return(error.status === 0 ? of(-1) : of(-2));
+      }),
+       map( resp => (typeof(resp) !== "number") ? 1:resp) 
+    ).subscribe( val => {
+      if( val===-1) 
+          this.avisarServicioAbajo();
+    } );
+  }
+
+  avisarServicioAbajo() {
+    console.log("SERVICIO ABAJO");
+    const parametros = {
+                        msj:"SERVICIO ABAJO",
+                        cmd:COMANDO_ALTA_SERVICIO
+                      };
+    this.ruteador.navigate(['testRxjs', { outlets: { outAvisos: ['mensaje'] } }],
+                         { queryParams: parametros });
+  }
+
   getPerroDesdeBackEnd(idPerro:string){
     this.deshabilitarBotonId();
     this.limpiarSeccionPerro();

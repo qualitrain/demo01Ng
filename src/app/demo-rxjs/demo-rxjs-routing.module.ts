@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AvisadorComponent } from './avisador/avisador.component';
 import { EditorComponent } from './editor/editor.component';
 import { ListaDemosBasicosComponent } from './lista-demos-basicos/lista-demos-basicos.component';
 import { PrincipalComponent } from './principal/principal.component';
@@ -36,7 +37,10 @@ const routes: Routes = [
       { path:'acumReduc', component:TestRxjs10Component},
       { path:'combinacion', component:TestRxjs12Component},
       { path:'ajax', component:TestRxjs15AjaxComponent},
-      { path:'avanzados',component:TestRxjs16SubjectComponent},
+      { path:'avanzados',component:TestRxjs16SubjectComponent}, 
+      
+      { path:'mensaje', component:AvisadorComponent,   outlet:'outAvisos'},
+      { path:'absurdo', component:TestRxjs04Component, outlet:'outAvisos'}
     ]
   }
 ];
