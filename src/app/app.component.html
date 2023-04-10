@@ -963,7 +963,7 @@
 
     <hr class="my-4">
   </div>
-  <div>
+  <div *ngIf="EjemplosModularizacionYruteoOn">
     <div class="row">
         <h5 class="text-primary">Ejemplo Modulo Funcional + Ruteo: 
             <pre class="d-inline">router-outlet</pre> 
@@ -971,10 +971,11 @@
     </div>
     <div class="row">
         <nav>
-            <ul>
-              <li><a routerLink="/">Inicio:Ra&iacute;z</a></li>
-              <li><a routerLink="/testRxjs">M&oacute;dulo RxJs</a></li>
-              <li><a routerLink="/pendiente">Ruta no definida a&uacute;n</a></li>
+            <ul class="nav flex-column nav-pills">
+              <li><a class="nav-link" routerLinkActive="activo" routerLink="inicio" exact>Fundamentos Angular</a></li>
+              <li><a class="nav-link" routerLinkActive="activo" routerLink="inydep">Demo Inyecci&oacute;n de Dependencia</a></li>
+              <li><a class="nav-link" routerLinkActive="activo" routerLink="testRxjs">M&oacute;dulo RxJs</a></li>
+              <li><a class="nav-link" routerLinkActive="activo" routerLink="pendiente">Novedades</a></li>
             </ul>
         </nav>
     </div>

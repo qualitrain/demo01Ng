@@ -31,6 +31,7 @@ import { TestRxjs14Component } from './test-rxjs14/test-rxjs14.component';
 import { TestRxjs17SchedulerComponent } from './test-rxjs17-scheduler/test-rxjs17-scheduler.component';
 import { DemoRxjsModule } from './demo-rxjs/demo-rxjs.module';
 import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
+import { DemoInyDepModule } from './demo-iny-dep/demo-iny-dep.module';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
     BrowserModule,
     FormsModule,
     DemoRxjsModule,
+    DemoInyDepModule,
     AppRoutingModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...

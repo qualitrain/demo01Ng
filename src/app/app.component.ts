@@ -20,11 +20,11 @@ export class AppComponent {
   InyeccionDeElementosDOMdeVistaEnClaseOn  :boolean=false;
 
   InyeccionDependencias2Instances1serviceOn:boolean=false;
-  JerarquiaDeInyeccionOn                   :boolean=false;
-  ServicioComoMotorDeCoreografiaOn         :boolean=false;
-  HerenciaDeServiciosYuseExistingOn        :boolean=false;
-  PersonalizandoBusquedaDeInyectoresOn     :boolean=false;
-  InyectoresPersonalizadosOn               :boolean=false;
+  JerarquiaDeInyeccionOn                   :boolean=true;
+  ServicioComoMotorDeCoreografiaOn         :boolean=true;
+  HerenciaDeServiciosYuseExistingOn        :boolean=true;
+  PersonalizandoBusquedaDeInyectoresOn     :boolean=true;
+  InyectoresPersonalizadosOn               :boolean=true;
 
   IntroduccionAlosObservablesYelRxJsOn     :boolean=false; //test-rxjs01
   FuncBasicasCrearObservablesAdaptadoresOn :boolean=false;  //test-rxjs02
@@ -50,6 +50,8 @@ export class AppComponent {
 
   EjemploMultiCastingYusoDeSubjectOn       :boolean=false; //test-rxjs16-subject
   EjemploSchedulersOn                      :boolean=false; //test-rxjs17-scheduler
+
+  EjemplosModularizacionYruteoOn           :boolean=true; 
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
