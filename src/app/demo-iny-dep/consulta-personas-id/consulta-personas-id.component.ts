@@ -10,7 +10,7 @@ import { ProvDatPersonasService } from 'src/app/servicios/prov-dat-persona.servi
 // Descomente la siguiente línea para que se genere una instancia distinta del servicio 
 // por cada instancia nueva del componente:
 
-  ,providers: [ProvDatPersonasService]
+//  ,providers: [ProvDatPersonasService]
 })
 export class ConsultaPersonasIDComponent {
   personas:IPersona[]=[];

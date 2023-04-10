@@ -20,7 +20,7 @@ export class AppComponent {
   InyeccionDeElementosDOMdeVistaEnClaseOn  :boolean=false;
 
   InyeccionDependencias2Instances1serviceOn:boolean=false;
-  JerarquiaDeInyeccionOn                   :boolean=true;
+  JerarquiaDeInyeccionOn                   :boolean=false;
   ServicioComoMotorDeCoreografiaOn         :boolean=true;
   HerenciaDeServiciosYuseExistingOn        :boolean=true;
   PersonalizandoBusquedaDeInyectoresOn     :boolean=true;

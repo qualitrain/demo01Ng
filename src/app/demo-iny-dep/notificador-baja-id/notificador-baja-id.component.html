@@ -1,0 +1,6 @@
+<button type="button" class="btn btn-info m-2" 
+        (click)="mostrarBajas ? mostrarBajas=false:mostrarBajas=true" 
+        *ngIf="nBajas > 0">
+        Bajas <span class="badge badge-light">{{nBajas}}</span>
+</button>
+<span class="texto-peque text-info" *ngIf="mostrarBajas">{{bajas}}</span>

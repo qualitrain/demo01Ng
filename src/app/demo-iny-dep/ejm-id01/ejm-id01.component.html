@@ -1,50 +1,45 @@
-<h5 class="table-info rounded text-secondary text-center py-1 mb-3">
-    Demo Inyecci&oacute;n de Dependencias</h5>
-
+<div>
     <div>
-        <div>
-            <h5 class="text-primary text-center">Componente 
-                <pre class="d-inline">consulta-personas</pre> (dos instancias) y un servicio 
-                <pre class="d-inline">ProvDatPersonas</pre>
-            </h5>
+        <h5 class="text-primary text-center">Componente 
+            <pre class="d-inline">consulta-personas</pre> (dos instancias) y un servicio 
+            <pre class="d-inline">ProvDatPersonas</pre>
+        </h5>
+    </div>
+
+    <div class="row  mt-4">
+        <div class="col-sm-6 p-1">
+            <app-consulta-personas-id></app-consulta-personas-id>
         </div>
-    
-        <div class="row  mt-4">
-            <div class="col-sm-6 p-1">
-                <app-consulta-personas-id></app-consulta-personas-id>
-            </div>
-            <div class="col-sm-6 p-1">
-                <app-consulta-personas-id></app-consulta-personas-id>
-            </div>
+        <div class="col-sm-6 p-1">
+            <app-consulta-personas-id></app-consulta-personas-id>
         </div>
-        <div class="text-info text-muted mt-3 text-info text-justify">
-            <small>
-                Ejemplo de implementaci&oacute;n de un <strong class="text-danger">servicio que es inyectado en las instancias de un componente
-                </strong>.<br>
-                <ul>
-                    <li>
-                        Cada <strong>instancia</strong> del componente de consulta <strong>solicita</strong>, con un <i class="text-primary">constructor</i> 
-                        que recibe un objeto del mismo tipo que el del servicio solicitado, <strong>la inyecci&oacute;n de un servicio</strong> 
-                        de datos (un arreglo de personas).
-                    </li>
-                    <li>
-                        Hay un servicio <i class="text-primary">ProvDatPersonaService</i> que es <strong>instanciado por</strong> el inyector de dependencias de Angular
-                    </li>
-                    <li>
-                        El servicio est&aacute; decorado con <code class="font-weight-bold">@Injectable(&#123; providedIn: 'root'&#125;)</code>, 
-                        que indica que debe haber <strong>una instacia por aplicaci&oacute;n</strong>.
-                    </li>
-                    <li>
-                        El componente puede configurar la creaci&oacute;n de <strong>una instancia por cada instancia del componente</strong>
-                        agregando a su decoración <code>@Component</code>, un campo <i class="text-primary">providers</i> como el siguiente: <code class="font-weight-bold">
-                        providers: [ ProvDatPersonaService ]</code>. 
-                    </li>
-                    <li>
-                        El servicio puede servir como una <strong>memoria compartida</strong> entre distintas instancias de uno o m&aacute;s componentes.
-                    </li>
-                </ul>
-            </small>
-        </div>
-        <hr class="my-4">
-      </div>
-    
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            Ejemplo de implementaci&oacute;n de un <strong class="text-danger">servicio que es inyectado en las instancias de un componente
+            </strong>.<br>
+            <ul>
+                <li>
+                    Cada <strong>instancia</strong> del componente de consulta <strong>solicita</strong>, con un <i class="text-primary">constructor</i> 
+                    que recibe un objeto del mismo tipo que el del servicio solicitado, <strong>la inyecci&oacute;n de un servicio</strong> 
+                    de datos (un arreglo de personas).
+                </li>
+                <li>
+                    Hay un servicio <i class="text-primary">ProvDatPersonaService</i> que es <strong>instanciado por</strong> el inyector de dependencias de Angular
+                </li>
+                <li>
+                    El servicio est&aacute; decorado con <code class="font-weight-bold">@Injectable(&#123; providedIn: 'root'&#125;)</code>, 
+                    que indica que debe haber <strong>una instacia por aplicaci&oacute;n</strong>.
+                </li>
+                <li>
+                    El componente puede configurar la creaci&oacute;n de <strong>una instancia por cada instancia del componente</strong>
+                    agregando a su decoración <code>@Component</code>, un campo <i class="text-primary">providers</i> como el siguiente: <code class="font-weight-bold">
+                    providers: [ ProvDatPersonaService ]</code>. 
+                </li>
+                <li>
+                    El servicio puede servir como una <strong>memoria compartida</strong> entre distintas instancias de uno o m&aacute;s componentes.
+                </li>
+            </ul>
+        </small>
+    </div>
+</div>
