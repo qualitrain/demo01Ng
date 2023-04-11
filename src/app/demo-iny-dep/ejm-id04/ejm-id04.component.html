@@ -1,0 +1,36 @@
+<div>
+    <div class="text-center">
+        <h5 class="text-primary">Herencia de Servicios y useExisting: Componente 
+            <pre class="d-inline">drop-down</pre>,  
+             y servicios 
+            <pre class="d-inline">IGestorOpciones</pre> (s&uacute;per clase), 
+            <pre class="d-inline">GestorOpcionesLibro</pre> (subclase) y 
+            <pre class="d-inline">GestorOpcionesDemoID</pre> (subclase)
+        </h5>
+    </div>
+
+    <div class="row  mt-4">
+        <div class="col-sm-12">
+            <app-drop-down-id></app-drop-down-id>
+        </div>
+    </div>
+
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            Ejemplo de componente que <strong class="text-danger">usa una implementaci&oacute;n u otra
+                de un mismo servicio 
+            </strong>.<br>
+            <ul>
+                <li>
+                    Inyecta un <strong>servicio abstracto y configura la implementaci&oacute;n
+                    a utilizar</strong>, como una referencia a un servicio publicado en un inyector root, utilizando
+                    <i class="text-primary">useExisting</i> en <i class="text-primary">providers</i>
+                </li>
+                <li>
+                    Esta estrategia suele usarse cuando se desea <strong>estrechar la visibilidad</strong> del componente 
+                    <strong>sobre los m&eacute;todos que ofrece un servicio</strong> inyectado en &eacute;l. 
+                </li>
+            </ul>
+        </small>
+    </div>
+</div>

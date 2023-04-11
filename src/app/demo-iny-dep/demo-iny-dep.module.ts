@@ -10,6 +10,8 @@ import { NotificadorBajaIDComponent } from './notificador-baja-id/notificador-ba
 import { ProvDatPersonasService } from '../servicios/prov-dat-persona.service';
 import { PrincipalIDComponent } from './principal-id/principal-id.component';
 import { EjmID03Component } from './ejm-id03/ejm-id03.component';
+import { EjmID04Component } from './ejm-id04/ejm-id04.component';
+import { DropDownIDComponent } from './drop-down-id/drop-down-id.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { EjmID03Component } from './ejm-id03/ejm-id03.component';
     ContenedorIDComponent,
     NotificadorBajaIDComponent,
     PrincipalIDComponent,
-    EjmID03Component 
+    EjmID03Component,
+    EjmID04Component,
+    DropDownIDComponent 
   ],
   imports: [
     CommonModule,
