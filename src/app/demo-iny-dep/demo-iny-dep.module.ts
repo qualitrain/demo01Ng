@@ -14,7 +14,8 @@ import { EjmID04Component } from './ejm-id04/ejm-id04.component';
 import { DropDownIDComponent } from './drop-down-id/drop-down-id.component';
 import { EjmID05Component } from './ejm-id05/ejm-id05.component';
 import { CajaDemoHostIDComponent } from './caja-demo-host-id/caja-demo-host-id.component';
-
+import { EjmID06Component } from './ejm-id06/ejm-id06.component';
+import { TituloIDComponent } from './titulo-id/titulo-id.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { CajaDemoHostIDComponent } from './caja-demo-host-id/caja-demo-host-id.c
     EjmID04Component,
     DropDownIDComponent,
     EjmID05Component,
-    CajaDemoHostIDComponent 
+    CajaDemoHostIDComponent,
+    EjmID06Component,
+    TituloIDComponent 
   ],
   imports: [
     CommonModule,

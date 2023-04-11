@@ -24,7 +24,7 @@ export class AppComponent {
   ServicioComoMotorDeCoreografiaOn         :boolean=false;
   HerenciaDeServiciosYuseExistingOn        :boolean=false;
   PersonalizandoBusquedaDeInyectoresOn     :boolean=false;
-  InyectoresPersonalizadosOn               :boolean=true;
+  InyectoresPersonalizadosOn               :boolean=false;
 
   IntroduccionAlosObservablesYelRxJsOn     :boolean=false; //test-rxjs01
   FuncBasicasCrearObservablesAdaptadoresOn :boolean=false;  //test-rxjs02

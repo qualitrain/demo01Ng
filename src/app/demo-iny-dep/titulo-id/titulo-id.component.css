@@ -1,0 +1,9 @@
+.logo{
+    position: absolute;
+    height: 100px;
+
+    margin-top: -20px;
+
+    box-sizing: border-box; /* contabilizar en ancho y largo márgenes internos y externos */
+    clip-path: inset(30px 5px); /* Hacer un clipping de 30px en las partes superior e inferior y 5px a la izquierda y derecha */
+}

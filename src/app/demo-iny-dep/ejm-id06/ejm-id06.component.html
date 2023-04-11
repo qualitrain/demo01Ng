@@ -1,0 +1,31 @@
+<div>
+    <div class="row"  id="InDep04">
+        <h5 class="text-primary">Inyectores personalizados: Componente 
+            <pre class="d-inline">titulo</pre>  
+        </h5>
+    </div>
+    <div class="sm-12 mt-4">
+        <app-titulo-id titSecundario="Ejemplo de Uso de Inyectores Personalizados"></app-titulo-id>
+    </div>
+    <div class="text-info text-muted mt-3 text-info text-justify mt-5">
+        <small>
+            <ul>
+                <li>
+                    Se inyecta un objeto que incluye el nombre de la organizaci&oacute;n y el logo, por medio
+                    de <i class="text-primary">InjectionToken&lt;object&gt;</i>
+                </li>
+                <li>
+                    El inyector se incluye en <i class="text-primary">inyectoresExtra.ts</i>
+                </li>
+                <li>
+                    Se inyecta el componente <i class="text-primary">titulo</i> con el decorador <i class="text-primary">@Inject</i>
+                </li>
+                <li>
+                    Se ejemplifica el uso de <i class="text-primary">useFactory</i> en el arreglo <i  class="text-primary">providers </i>para cambiar 
+                    la funci&oacute;n que instancia el objeto a inyectar
+                </li>
+            </ul>
+        </small>
+    </div> 
+</div>
+
