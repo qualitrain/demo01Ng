@@ -22,8 +22,8 @@ export class AppComponent {
   InyeccionDependencias2Instances1serviceOn:boolean=false;
   JerarquiaDeInyeccionOn                   :boolean=false;
   ServicioComoMotorDeCoreografiaOn         :boolean=false;
-  HerenciaDeServiciosYuseExistingOn        :boolean=true;
-  PersonalizandoBusquedaDeInyectoresOn     :boolean=true;
+  HerenciaDeServiciosYuseExistingOn        :boolean=false;
+  PersonalizandoBusquedaDeInyectoresOn     :boolean=false;
   InyectoresPersonalizadosOn               :boolean=true;
 
   IntroduccionAlosObservablesYelRxJsOn     :boolean=false; //test-rxjs01

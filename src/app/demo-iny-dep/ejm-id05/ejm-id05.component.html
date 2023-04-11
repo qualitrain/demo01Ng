@@ -1,0 +1,67 @@
+<div>
+    <div class="text-center">
+        <h5 class="text-primary">Personalizando la B&uacute;squeda de Inyectores: Componentes 
+            <pre class="d-inline">drop-down</pre>,  
+            <pre class="d-inline">caja-demo-host</pre>,  
+                y servicios 
+            <pre class="d-inline">GestorOpcionesLibro</pre>, 
+            <pre class="d-inline">GestorOpcionesDemoID</pre> y
+            <pre class="d-inline">GestorOpcionesAnimal</pre> 
+        </h5>
+    </div>
+    <div class="row  mt-4">
+        <div class="">
+            <app-drop-down-id></app-drop-down-id>
+        </div>
+        <div class="ml-1 mb-1">
+            <app-caja-demo-host-id>
+                <app-drop-down-id></app-drop-down-id>
+            </app-caja-demo-host-id>
+        </div>
+        <div class="ml-1">
+            <app-caja-demo-host-id>
+                <app-drop-down-id></app-drop-down-id>
+            </app-caja-demo-host-id>
+        </div>
+        <div class="ml-1">
+            <app-caja-demo-host-id>
+                <app-drop-down-id></app-drop-down-id>
+            </app-caja-demo-host-id>
+        </div>
+    </div>
+        
+    <div class="text-info text-muted mt-3 text-info text-justify">
+        <small>
+            Demo de <strong class="text-danger">personalización de b&uacute;squeda de inyectores 
+             </strong>.<br>
+            <ul>
+                <li>
+                    Se crean 3 instancias de un componente que anida un bot&oacute;n DropDown y proyecta otro
+                </li>
+                <li>
+                    Modifica el componente drop-down con decoradores en la inyecci&oacute;n de su servicio de datos: 
+                    <i class="text-primary">@Host</i>, <i class="text-primary">@SkipSelf</i> y <i class="text-primary">@Optional</i>.
+                </li>
+                <li>
+                    <i class="text-primary">@Host </i>  <strong>termina</strong> la b&uacute;squeda en el elemento Host (el componente en donde se da la inyecci&oacute;n o
+                    el elemento contenedor en el caso de proyección)
+                </li>
+                <li>
+                    <i class="text-primary">@SkipSelf </i>  <strong>inicia</strong> la b&uacute;squeda en el siguiente elemento superior
+                    al componente en donde se da la inyecci&oacute;n
+                </li>
+                <li>
+                    El demo est&aacute; listo para que se comenten y descomenten decoraciones y providers a fin de comprender
+                    el efecto del uso de decoradores de personalizaci&oacute;n de b&uacute;squeda de inyectores.
+                </li>
+                <li>
+                    Se agreg&oacute; un arreglo <i class="text-primary">viewProviders</i> al componente caja-demo-host para tener distintos contenidos
+                    en los dropdowns seg&uacute;n sea cada uno, anidado o proyectado 
+                </li>
+            </ul>
+        </small>
+    </div>
+
+    <hr class="my-4">
+  </div>
+

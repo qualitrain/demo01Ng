@@ -12,6 +12,8 @@ import { PrincipalIDComponent } from './principal-id/principal-id.component';
 import { EjmID03Component } from './ejm-id03/ejm-id03.component';
 import { EjmID04Component } from './ejm-id04/ejm-id04.component';
 import { DropDownIDComponent } from './drop-down-id/drop-down-id.component';
+import { EjmID05Component } from './ejm-id05/ejm-id05.component';
+import { CajaDemoHostIDComponent } from './caja-demo-host-id/caja-demo-host-id.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { DropDownIDComponent } from './drop-down-id/drop-down-id.component';
     PrincipalIDComponent,
     EjmID03Component,
     EjmID04Component,
-    DropDownIDComponent 
+    DropDownIDComponent,
+    EjmID05Component,
+    CajaDemoHostIDComponent 
   ],
   imports: [
     CommonModule,
