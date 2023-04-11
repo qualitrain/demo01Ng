@@ -21,7 +21,7 @@ export class AppComponent {
 
   InyeccionDependencias2Instances1serviceOn:boolean=false;
   JerarquiaDeInyeccionOn                   :boolean=false;
-  ServicioComoMotorDeCoreografiaOn         :boolean=true;
+  ServicioComoMotorDeCoreografiaOn         :boolean=false;
   HerenciaDeServiciosYuseExistingOn        :boolean=true;
   PersonalizandoBusquedaDeInyectoresOn     :boolean=true;
   InyectoresPersonalizadosOn               :boolean=true;

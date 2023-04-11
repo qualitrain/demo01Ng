@@ -9,6 +9,7 @@ import { ContenedorIDComponent } from './contenedor-id/contenedor-id.component';
 import { NotificadorBajaIDComponent } from './notificador-baja-id/notificador-baja-id.component';
 import { ProvDatPersonasService } from '../servicios/prov-dat-persona.service';
 import { PrincipalIDComponent } from './principal-id/principal-id.component';
+import { EjmID03Component } from './ejm-id03/ejm-id03.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PrincipalIDComponent } from './principal-id/principal-id.component';
     EjmID02Component,
     ContenedorIDComponent,
     NotificadorBajaIDComponent,
-    PrincipalIDComponent 
+    PrincipalIDComponent,
+    EjmID03Component 
   ],
   imports: [
     CommonModule,
