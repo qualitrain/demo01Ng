@@ -966,9 +966,20 @@
   
   <div *ngIf="EjemplosModularizacionYruteoOn">
     <div class="row">
-        <h5 class="text-primary">Ejemplo Modulo Funcional + Ruteo: 
+        <h5 class="text-primary col-sm-9">Ejemplo Modulo Funcional + Ruteo: 
             <pre class="d-inline">router-outlet</pre> 
         </h5>
+        <div  *ngIf="!sesionActiva" class="text-right col-sm-3">
+            <a class="btn btn-sm btn-secondary col-sm-6" 
+              routerLinkActive="activo" routerLink="login">Login
+            </a>
+        </div>
+        <div  *ngIf="sesionActiva" class="text-right col-sm-3">
+            <a class="btn btn-sm btn-secondary col-sm-6"               
+               routerLinkActive="activo" routerLink="logout">Logout
+            </a>
+        </div>
+
     </div>
     <div class="row">
         <nav>

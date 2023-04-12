@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutenticacionService } from './demo-login/autenticacion.service';
 import { ICampo } from './select-alternativa/icampo';
 import { ILayout } from './select-alternativa/ilayout';
 
@@ -51,7 +52,9 @@ export class AppComponent {
   EjemploMultiCastingYusoDeSubjectOn       :boolean=false; //test-rxjs16-subject
   EjemploSchedulersOn                      :boolean=false; //test-rxjs17-scheduler
 
-  EjemplosModularizacionYruteoOn           :boolean=true; 
+  EjemplosModularizacionYruteoOn           :boolean=true;
+  
+  sesionActiva:boolean=false;
 
   campoPelicula:ICampo;
   layoutPelicula:ILayout;
@@ -67,7 +70,11 @@ export class AppComponent {
   testDebounceThrottleOn:boolean=true;
   testReduceScanTakeUntil:boolean=true;
 
-  constructor() {
+  constructor(private motorEvtLogin:AutenticacionService) {
+    this.motorEvtLogin
+                .notificador
+                   .subscribe( autenticado => this.sesionActiva = autenticado);
+
     this.tipoSeleccion = "checkbox";
     this.campoPelicula = {
       nombre:"Pelicula",

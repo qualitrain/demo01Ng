@@ -32,6 +32,8 @@ import { TestRxjs17SchedulerComponent } from './test-rxjs17-scheduler/test-rxjs1
 import { DemoRxjsModule } from './demo-rxjs/demo-rxjs.module';
 import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
 import { DemoInyDepModule } from './demo-iny-dep/demo-iny-dep.module';
+import { DemoLoginModule } from './demo-login/demo-login.module';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -65,8 +67,9 @@ import { DemoInyDepModule } from './demo-iny-dep/demo-iny-dep.module';
     BrowserModule,
     FormsModule,
     DemoRxjsModule,
-    DemoInyDepModule,
-    AppRoutingModule
+    DemoLoginModule,
+    AppRoutingModule,
+    DemoInyDepModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...
   // providers: [],
@@ -75,4 +78,11 @@ import { DemoInyDepModule } from './demo-iny-dep/demo-iny-dep.module';
 
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+  constructor(router:Router){
+    const replacer = (key: any, value: { name: any; }) => (typeof value === 'function') ? value.name : value;
+
+    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));   
+  }
+}
