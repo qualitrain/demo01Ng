@@ -10,7 +10,8 @@ import { PrincipalIDComponent } from './principal-id/principal-id.component';
 
 const routes: Routes = [
   {
-    path:'inydep',
+ //   path:'inydep',
+    path:'',
     component:PrincipalIDComponent,
     children:[
       { path:'ejm01',component:EjmID01Component },

@@ -5,6 +5,9 @@ import { SelecColorComponent } from './selec-color/selec-color.component';
 const routes: Routes = [
    { path: 'inicio', title:'raiz App demo Angular', component: SelecColorComponent },
    { path: '', redirectTo: 'inicio', pathMatch:'full'},
+   { path:'inydep',
+     loadChildren: () => import('./demo-iny-dep/demo-iny-dep.module').then(m => m.DemoInyDepModule)},
+
    { path: '**', component: PagNoExisteComponent}
   ];
   @NgModule({
