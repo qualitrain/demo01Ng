@@ -4,16 +4,14 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  autenticado:boolean = false;
+  private autenticado:boolean = false;
   static nInstacias:number = 0;
 
   notificador:EventEmitter<boolean> = new EventEmitter();
 
   constructor() { 
-    console.log("AutenticacionService.constructor()");
-    AutenticacionService.nInstacias++;
-    console.log("AutenticacionService.nInstacias:" + AutenticacionService.nInstacias);
-  }
+     AutenticacionService.nInstacias++;
+   }
 
   yaAutenticado(){
     return this.autenticado;
