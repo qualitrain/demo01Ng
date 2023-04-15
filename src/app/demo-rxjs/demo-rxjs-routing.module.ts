@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AutenticadoGuard } from '../demo-login/autenticado.guard';
+import { fnGrdAutenticacionRuta, fnGrdAutenticacionRutaHijos } from '../demo-login/autenticado.guard';
 import { AvisadorComponent } from './avisador/avisador.component';
 import { EditorComponent } from './editor/editor.component';
 import { ListaDemosBasicosComponent } from './lista-demos-basicos/lista-demos-basicos.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
     children:[
       { 
         path:'basicos',
-        canActivateChild:[AutenticadoGuard],
+        canActivateChild:[fnGrdAutenticacionRutaHijos],
         children:[
           { path:'', component:ListaDemosBasicosComponent },
           { path:'editor/:id',component:EditorComponent},
@@ -39,11 +39,11 @@ const routes: Routes = [
       { path:'filtros' , component:TestRxjs06Component},
       { path:'acumReduc', component:TestRxjs10Component},
       { path:'combinacion', component:TestRxjs12Component},
-      { path:'ajax', component:TestRxjs15AjaxComponent, canActivate:[AutenticadoGuard]},
-      { path:'avanzados',component:TestRxjs16SubjectComponent, canActivate:[AutenticadoGuard]}, 
+      { path:'ajax', component:TestRxjs15AjaxComponent, canActivate:[fnGrdAutenticacionRuta]},
+      { path:'avanzados',component:TestRxjs16SubjectComponent, canActivate:[fnGrdAutenticacionRuta]}, 
       
       { path:'mensaje', component:AvisadorComponent,   outlet:'outAvisos'},
-      { path:'absurdo', component:TestRxjs04Component, outlet:'outAvisos', canActivate:[AutenticadoGuard]}
+      { path:'absurdo', component:TestRxjs04Component, outlet:'outAvisos', canActivate:[fnGrdAutenticacionRuta]}
     ]
   }
 ];
