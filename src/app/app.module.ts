@@ -34,6 +34,7 @@ import { PagNoExisteComponent } from './pag-no-existe/pag-no-existe.component';
 import { DemoInyDepModule } from './demo-iny-dep/demo-iny-dep.module';
 import { DemoLoginModule } from './demo-login/demo-login.module';
 import { Router } from '@angular/router';
+import { DemoHttpModule } from './demo-http/demo-http.module';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { Router } from '@angular/router';
     DemoRxjsModule,
     DemoLoginModule,
     AppRoutingModule,
-    DemoInyDepModule
+    DemoInyDepModule,
+    DemoHttpModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...
   // providers: [],

@@ -52,7 +52,9 @@ export class AppComponent {
   EjemploMultiCastingYusoDeSubjectOn       :boolean=false; //test-rxjs16-subject
   EjemploSchedulersOn                      :boolean=false; //test-rxjs17-scheduler
 
-  EjemplosModularizacionYruteoOn           :boolean=true;
+  EjemplosModularizacionYruteoOn           :boolean=false; //router-outlet
+
+  EjemplosHttpOn                           :boolean=true;
   
   sesionActiva:boolean=false;
 
