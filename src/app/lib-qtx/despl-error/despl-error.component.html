@@ -1,0 +1,9 @@
+<div *ngIf="!avisoConfirmado" class="alert alert-danger" role="alert">
+    <span class="font-weight-bold">{{params.tipo}}:</span>
+    <span class="ml-2">{{params.descripcion}}</span>
+    <hr class="my-1">
+    <div class="d-flex">
+        <span class="mr-auto">{{params.sugerencia}}</span>
+        <button class="btn btn-danger btn-sm ml-auto px-3" (click)="atenderOK()">Ok</button>
+    </div>
+</div>

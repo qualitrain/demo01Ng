@@ -22,7 +22,6 @@ import { CajaDemoHostComponent } from './caja-demo-host/caja-demo-host.component
 import { TituloComponent } from './titulo/titulo.component';
 import { TestRxjs07Component } from './test-rxjs07/test-rxjs07.component';
 import { TestRxjs08Component } from './test-rxjs08/test-rxjs08.component'
-import { Canvas01Component } from './canvas01/canvas01.component';
 import { TestRxjs09Component } from './test-rxjs09/test-rxjs09.component';
 import { TestRxjs11Component } from './test-rxjs11/test-rxjs11.component';
 import { TestRxjs13Component } from './test-rxjs13/test-rxjs13.component';
@@ -35,6 +34,7 @@ import { DemoInyDepModule } from './demo-iny-dep/demo-iny-dep.module';
 import { DemoLoginModule } from './demo-login/demo-login.module';
 import { Router } from '@angular/router';
 import { DemoHttpModule } from './demo-http/demo-http.module';
+import { LibQtxModule } from './lib-qtx/lib-qtx.module';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,6 @@ import { DemoHttpModule } from './demo-http/demo-http.module';
     TituloComponent,
     TestRxjs07Component,
     TestRxjs08Component,
-    Canvas01Component,
     TestRxjs09Component,
     TestRxjs11Component,
     TestRxjs13Component,
@@ -71,7 +70,8 @@ import { DemoHttpModule } from './demo-http/demo-http.module';
     DemoLoginModule,
     AppRoutingModule,
     DemoInyDepModule,
-    DemoHttpModule
+    DemoHttpModule,
+    LibQtxModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...
   // providers: [],

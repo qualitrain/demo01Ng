@@ -1,7 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { AfterViewInit, Component, DoCheck } from '@angular/core';
 import { debounce, debounceTime, filter, fromEvent, interval, map, merge, tap, throttle, throttleTime } from 'rxjs';
-import { IPunto } from 'src/app/canvas01/IPunto';
+import { IPunto } from 'src/app/lib-qtx/canvas01/IPunto';
 
 
 @Component({
