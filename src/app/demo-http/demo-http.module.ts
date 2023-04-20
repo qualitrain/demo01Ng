@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { DemoHttpRoutingModule } from './demo-http-routing.module';
 import { MainModHttpComponent } from './main-mod-http/main-mod-http.component';
+import { ConsultaPersonaHttpComponent } from './consulta-persona-http/consulta-persona-http.component';
+import { LibQtxModule } from '../lib-qtx/lib-qtx.module';
 
 
 @NgModule({
   declarations: [
-    MainModHttpComponent
+    MainModHttpComponent,
+    ConsultaPersonaHttpComponent
   ],
   imports: [
     CommonModule,
+    LibQtxModule,
     DemoHttpRoutingModule
   ],
   exports: [

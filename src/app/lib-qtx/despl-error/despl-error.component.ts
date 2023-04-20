@@ -14,7 +14,11 @@ export class DesplErrorComponent
   avisoLeido:boolean;
 
   @Input()
-  params?:IParamsAviso;
+  params:IParamsAviso={
+    tipo : '',
+    descripcion: '',
+    sugerencia: ''
+  };
   
   constructor() {
     this.avisoLeido = false;

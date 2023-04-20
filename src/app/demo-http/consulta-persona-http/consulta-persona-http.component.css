@@ -1,0 +1,8 @@
+input.idNum{
+    width: 5.5rem;
+}
+input.idNum::-webkit-inner-spin-button {
+    margin-left: 5px; /* Agrega margen izquierdo */
+    margin-right: 5px; /* Agrega margen derecho */
+  }
+  

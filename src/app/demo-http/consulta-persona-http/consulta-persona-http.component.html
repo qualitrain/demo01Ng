@@ -1,0 +1,13 @@
+<div class="d-inline-block ">
+    <label for="{{idInput}}" class=" mb-1">Id Persona:</label>
+    <input type="number" min="0" id="{{idInput}}" 
+           class="form-control-sm text-right idNum ml-3">
+    <span *ngIf="persona" class="font-weight-bold ml-3">
+        <span class="text-primary">{{persona.nombres}} </span> 
+        <span class="text-secondary">{{persona.apPaterno}} </span>
+        <span class="text-success">{{persona.apMaterno}} </span>
+    </span>
+</div>
+<div *ngIf="hayErrores===true" class="mt-2">
+        <app-despl-error [params]="avisoError"></app-despl-error>
+</div> 

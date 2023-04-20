@@ -35,6 +35,7 @@ import { DemoLoginModule } from './demo-login/demo-login.module';
 import { Router } from '@angular/router';
 import { DemoHttpModule } from './demo-http/demo-http.module';
 import { LibQtxModule } from './lib-qtx/lib-qtx.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { LibQtxModule } from './lib-qtx/lib-qtx.module';
     AppRoutingModule,
     DemoInyDepModule,
     DemoHttpModule,
-    LibQtxModule
+    LibQtxModule,
+    HttpClientModule
   ],
   // Prueba a comentar o descomentar una de las líneas de providers...
   // providers: [],
