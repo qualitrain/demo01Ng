@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-mod-http.component.css']
 })
 export class MainModHttpComponent {
+  arquitecturaHttpClientBasicaOn:boolean = true;
+  ejmGetPersonaOn:boolean=false;
+  ejmGetPersonasOn:boolean=true;
 
 }
