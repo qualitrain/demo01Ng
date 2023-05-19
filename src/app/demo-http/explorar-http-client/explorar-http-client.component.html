@@ -1,0 +1,49 @@
+<div>
+    <div class="mt-2">
+        <span class="text-primary etiqueta">Id:</span>
+        <span class="text-secondary valor ml-4">{{perris?.id ? perris?.id : ''}}</span>
+    </div>
+    <div class="mt-2">
+        <span class="text-primary etiqueta">Nombre:</span>
+        <span class="text-secondary valor ml-4">{{perris?.nombre}}</span>
+    </div>
+    <div class="mt-2">
+        <span class="text-primary etiqueta">Raza:</span>
+        <span class="text-secondary valor ml-4">{{perris?.raza}}</span>
+    </div>
+    <div class="mt-4">
+        <button class="btn btn-primary" (click)="leerPerro()">Consulta Simple</button>
+        <button class="btn btn-danger ml-4" (click)="leerPerroErroneo()">Leer con error</button>
+        <button class="btn btn-primary ml-4" (click)="leerPerroPlus()">Consulta Mejorada</button>
+    </div>
+</div>
+<div *ngIf="hayError">
+    <hr class="mb-4">
+    <div class="mt-4">
+        <span class="text-danger etiqueta">status:</span>
+        <span class="text-secondary ml-4">{{errorApi?.status}}</span>
+    </div>
+    <div class="mt-4">
+        <span class="text-danger etiqueta">uri:</span>
+        <span class="text-secondary ml-4">{{errorApi?.uri}}</span>
+    </div>
+    <div class="mt-4">
+        <span class="text-danger etiqueta">mensaje:</span>
+        <span class="text-secondary ml-4">{{errorApi?.mensaje}}</span>
+    </div>
+    <div class="mt-4" *ngIf="errorApi?.excepcion">
+        <span class="text-danger etiqueta">excepcion:</span>
+        <span class="text-secondary ml-4">{{errorApi?.excepcion}}</span>
+    </div>
+    <div class="mt-4" *ngIf="errorApi?.excepcionAnidada">
+        <span class="text-danger etiqueta">excepcionAnidada:</span>
+        <span class="text-secondary ml-4">{{errorApi?.excepcionAnidada}}</span>
+    </div>
+</div>
+<div *ngIf="modoDebugOn && !hayError">
+    <hr class="mb-4">
+    <div *ngFor="let header of nomHeaders; index as i" class="mt-4">
+        <span class="text-success etiqueta">{{header}}</span>
+        <span class="text-secondary ml-4">{{valHeaders[i]}}</span>
+    </div>
+</div>

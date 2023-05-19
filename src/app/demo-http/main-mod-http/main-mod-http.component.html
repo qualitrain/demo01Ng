@@ -1,4 +1,3 @@
-
 <div>
     <h4 class="text-center">M&oacute;dulo HttpClient</h4>
 </div>
@@ -42,8 +41,11 @@
                 <div *ngIf="ejmGetPersonaOn" class="mb-4">
                     <app-consulta-persona-http></app-consulta-persona-http>
                 </div>
-        </div>
+            </div>
         </div>
     </div>
 </div>
 
+<div *ngIf="getDetalladoYmanejoErroresOn">
+    <app-explorar-http-client></app-explorar-http-client>
+</div>
