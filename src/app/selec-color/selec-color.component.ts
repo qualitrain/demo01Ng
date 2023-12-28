@@ -8,7 +8,6 @@ import { Component, OnInit, Input
   styleUrls: ['./selec-color.component.css']
 })
 export class SelecColorComponent implements OnInit
-//, OnChanges 
 {
   @Input()
   numCajas:string="";
@@ -44,12 +43,6 @@ export class SelecColorComponent implements OnInit
       tonoI += incremento;
     }
   }
-
-  /*
-  ngOnChanges(cambios: SimpleChanges):void{
-    console.log(cambios);
-  }
-  */
 
   hsl():string {
     return this.toHsl(this.tono, this.saturacion, this.iluminacion);

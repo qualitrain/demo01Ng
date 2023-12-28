@@ -14,14 +14,21 @@
         </div>
     </div>
     <div class="row my-3">
-        <small class="text-muted">Ejemplo del uso del <span class="font-italic font-weight-bold text-danger">interpolation binding</span>. 
+        <small class="text-muted">Ejemplo del uso del 
+            <span class="font-italic font-weight-bold text-danger">interpolation binding</span>. 
             Cada instancia del componente lee un arreglo declarado en su controlador y muestra sus valores 
-            usando expresiones del tipo <code class="font-weight-bold">{{ </code> <code class="font-weight-bold">opciones[0] }}</code> y  
-            <code class="font-weight-bold">{{ </code> <code class="font-weight-bold">opcionI }}</code> 
-            con un <code class="font-weight-bold">*ngFor=</code><code class="font-weight-bold">"let opcionI of opciones" </code>.<br>
-            Se hace uso de diversas clases del <span class="font-italic">framework </span>  <code>Bootstrap 4</code>.
+            usando expresiones del tipo 
+            <code class="font-weight-bold">&#123;&#123; </code> 
+            <code class="font-weight-bold">opciones[0] &#125;&#125;</code> y  
+            <code class="font-weight-bold">&#123;&#123; </code> 
+            <code class="font-weight-bold">opcionI &#125;&#125;</code> 
+            con un <code class="font-weight-bold">*ngFor=</code>
+            <code class="font-weight-bold">"let opcionI of opciones" </code>.
+            <br>
+            Se hace uso de diversas clases del 
+            <span class="font-italic">framework </span>  
+            <code>Bootstrap 4</code>.
         </small>
-
     </div>
     <hr class="my-4">
   </div>
@@ -41,16 +48,16 @@
             <app-seleccionador></app-seleccionador>
         </div>
         <div class="col-sm-4 p-2">
-                <app-seleccionador paramNombre="servicio" 
-                                paramEtiquetas="Desayunos,Comidas,Uniformes,Biblioteca,Sala Computo" 
-                                paramValores="D,C,U,B,SC"
-                                paramConBorde="true"
-                                paramMostrarValores="false"
-                                paramTipo ="checkbox"
-                >                
-                </app-seleccionador>
-            </div>
+            <app-seleccionador paramNombre="servicio" 
+                            paramEtiquetas="Desayunos,Comidas,Uniformes,Biblioteca,Sala Computo" 
+                            paramValores="D,C,U,B,SC"
+                            paramConBorde="true"
+                            paramMostrarValores="false"
+                            paramTipo ="checkbox"
+            >                
+            </app-seleccionador>
         </div>
+    </div>
     <div>
         <small class="text-muted">Ejemplo de usos de <span class="font-italic font-weight-bold text-danger">directivas estructurales</span>. 
             En este caso: <br>
@@ -191,10 +198,10 @@
     <div class="text-info text-muted mt-3 text-info text-justify">
         <small>
             <strong>El componente de selecci&oacute;n recibe objetos</strong> que provienen del componente (usando el decorador  
-            <code class="font-weight-bold">@Input()</code>).<br>
+            <code class="font-weight-bold">&#64;Input()</code>).<br>
             El componente <strong>publica los cambios de valor</strong> por medio del uso de un objeto emisor de eventos
             <code class="font-weight-bold">EventEmitter&lt;string&gt;</code> y del decorador
-            <code class="font-weight-bold">@Output</code>. <br>
+            <code class="font-weight-bold">&#64;Output</code>. <br>
             <strong>Se le pasan objetos al seleccionador</strong> por medio de 
             <code class="font-weight-bold">[campo]="campoPelicula"</code>, que indica el uso de 
             una <i>Input property</i> llamada 'campo' (que tomar&aacute; el valor del objeto local
@@ -263,15 +270,15 @@
         <div class="mr-2">Probar: </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="cbxView" value="true">
-            <label class="form-check-label text-warning font-weight-bold" for="cbxView">@ViewChild y @ViewChildren</label>
+            <label class="form-check-label text-warning font-weight-bold" for="cbxView">&#64;ViewChild y &#64;ViewChildren</label>
         </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="cbxContent" value="true">
-            <label class="form-check-label text-danger font-weight-bold" for="cbxContent">@ContentChild y @ContentChildren</label>
+            <label class="form-check-label text-danger font-weight-bold" for="cbxContent">&#64;ContentChild y &#64;ContentChildren</label>
         </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="cbxContDir" value="true">
-            <label class="form-check-label text-secondary font-weight-bold" for="cbxContDir">@ContentChildren sobre Directiva</label>
+            <label class="form-check-label text-secondary font-weight-bold" for="cbxContDir">&#64;ContentChildren sobre Directiva</label>
         </div>
     </div>
 
@@ -295,10 +302,10 @@
     <div class="text-info text-muted mt-3 text-info text-justify">
         <small>
             <strong>El componente inyecta elementos de la vista</strong> usando decoradores
-            <code class="font-weight-bold">@ViewChild</code>,
-            <code class="font-weight-bold">@ViewChildren</code>,
-            <code class="font-weight-bold">@ContentChild</code> y 
-            <code class="font-weight-bold">@ContentChildren</code>.
+            <code class="font-weight-bold">&#64;ViewChild</code>,
+            <code class="font-weight-bold">&#64;ViewChildren</code>,
+            <code class="font-weight-bold">&#64;ContentChild</code> y 
+            <code class="font-weight-bold">&#64;ContentChildren</code>.
             <br>
             El componente ejemplifica el uso de una <strong>directiva para identificar elementos a inyectar.</strong> 
             Esa directiva usa eventos para cambiar momentanemente la apariencia del elemento que la hospeda. <br>
@@ -311,9 +318,9 @@
                 <li><code class="font-weight-bold">ElementRef</code></li>
                 <li><code class="font-weight-bold">QueryList&lt;ElementRef&gt;</code></li>
                 <li><code class="font-weight-bold">Renderer2</code></li>
-                <li><code class="font-weight-bold">@Directive</code></li>
-                <li><code class="font-weight-bold">@HostListener</code></li>
-                <li><code class="font-weight-bold">@HostBinding</code></li>
+                <li><code class="font-weight-bold">&#64;Directive</code></li>
+                <li><code class="font-weight-bold">&#64;HostListener</code></li>
+                <li><code class="font-weight-bold">&#64;HostBinding</code></li>
             </ul>
         </small>
     </div>
@@ -351,12 +358,12 @@
                     Hay un servicio <i class="text-primary">ProvDatPersonaService</i> que es <strong>instanciado por</strong> el inyector de dependencias de Angular
                 </li>
                 <li>
-                    El servicio est&aacute; decorado con <code class="font-weight-bold">@Injectable(&#123; providedIn: 'root'&#125;)</code>, 
+                    El servicio est&aacute; decorado con <code class="font-weight-bold">&#64;Injectable(&#123; providedIn: 'root'&#125;)</code>, 
                     que indica que debe haber <strong>una instacia por aplicaci&oacute;n</strong>.
                 </li>
                 <li>
                     El componente puede configurar la creaci&oacute;n de <strong>una instancia por cada instancia del componente</strong>
-                    agregando a su decoración <code>@Component</code>, un campo <i class="text-primary">providers</i> como el siguiente: <code class="font-weight-bold">
+                    agregando a su decoración <code>&#64;Component</code>, un campo <i class="text-primary">providers</i> como el siguiente: <code class="font-weight-bold">
                     providers: [ ProvDatPersonaService ]</code>. 
                 </li>
                 <li>
@@ -393,7 +400,7 @@
                     <i class="text-primary">ProvDatPersonasService</i> y <i class="text-primary">Prov2DatPersonasService</i>
                 </li>
                 <li>
-                    Los servicio est&aacute;n decorados con <code class="font-weight-bold">@Injectable(&#123; providedIn: 'root'&#125;)</code>, 
+                    Los servicio est&aacute;n decorados con <code class="font-weight-bold">&#64;Injectable(&#123; providedIn: 'root'&#125;)</code>, 
                     que indica que debe haber <strong>una instacia por aplicaci&oacute;n</strong>.
                 </li>
                 <li>
@@ -534,14 +541,14 @@
                 </li>
                 <li>
                     Modifica el componente drop-down con decoradores en la inyecci&oacute;n de su servicio de datos: 
-                    <i class="text-primary">@Host</i>, <i class="text-primary">@SkipSelf</i> y <i class="text-primary">@Optional</i>.
+                    <i class="text-primary">&#64;Host</i>, <i class="text-primary">&#64;SkipSelf</i> y <i class="text-primary">&#64;Optional</i>.
                 </li>
                 <li>
-                    <i class="text-primary">@Host </i>  <strong>termina</strong> la b&uacute;squeda en el elemento Host (el componente en donde se da la inyecci&oacute;n o
+                    <i class="text-primary">&#64;Host </i>  <strong>termina</strong> la b&uacute;squeda en el elemento Host (el componente en donde se da la inyecci&oacute;n o
                     el elemento contenedor en el caso de proyección)
                 </li>
                 <li>
-                    <i class="text-primary">@SkipSelf </i>  <strong>inicia</strong> la b&uacute;squeda en el siguiente elemento superior
+                    <i class="text-primary">&#64;SkipSelf </i>  <strong>inicia</strong> la b&uacute;squeda en el siguiente elemento superior
                     al componente en donde se da la inyecci&oacute;n
                 </li>
                 <li>
@@ -579,7 +586,7 @@
                     El inyector se incluye en <i class="text-primary">inyectoresExtra.ts</i>
                 </li>
                 <li>
-                    Se inyecta el componente <i class="text-primary">titulo</i> con el decorador <i class="text-primary">@Inject</i>
+                    Se inyecta el componente <i class="text-primary">titulo</i> con el decorador <i class="text-primary">&#64;Inject</i>
                 </li>
                 <li>
                     Se ejemplifica el uso de <i class="text-primary">useFactory</i> en el arreglo <i  class="text-primary">providers </i>para cambiar 

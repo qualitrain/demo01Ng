@@ -18,6 +18,7 @@ export class ExplorarHttpClientComponent {
   };
   nomHeaders:string[]=[];
   valHeaders:string[]=[];
+  statusHttp:string="";
 
   hayError:boolean=false;
   errorApi:IErrorApiPerrera|undefined;
@@ -25,10 +26,11 @@ export class ExplorarHttpClientComponent {
   constructor(private lector:ProvDatPerrosService){}
 
   leerPerro(){
-    this.hayError = false;
+    this.limpiarDatosSeguimientoHttp();
 
     this.lector.getPerro(1).subscribe( resp => {
       this.perris = resp.body;
+      this.statusHttp = resp.status + "";
       this.nomHeaders = resp.headers.keys();
       for(let i=0; i<this.nomHeaders.length; i++ ){
         let valHeaderI = resp.headers.get(this.nomHeaders[i]);
@@ -36,10 +38,18 @@ export class ExplorarHttpClientComponent {
       }
     })
   }
-  leerPerroPlus(){
-    this.hayError = false;
 
-    this.lector.getPerroPlus(2).subscribe( {
+  limpiarDatosSeguimientoHttp() {
+    this.hayError = false;
+    this.nomHeaders=[];
+    this.valHeaders=[];
+    this.statusHttp="";
+  }
+
+  leerPerroPlus(){
+    this.limpiarDatosSeguimientoHttp();
+
+    this.lector.getPerroPlus(200).subscribe( {
       next: perro => {
         this.perris = perro;
       },
@@ -53,7 +63,7 @@ export class ExplorarHttpClientComponent {
   }
 
   leerPerroErroneo(){
-    this.hayError = false;
+    this.limpiarDatosSeguimientoHttp();
 
     this.lector.testGetPerroErroneo().subscribe( {
       next:resp => {
